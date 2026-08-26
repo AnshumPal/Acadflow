@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased text-slate-800;
+  }
+  ::selection {
+    @apply bg-blue-100 text-blue-950;
+  }
+}
+
+/* Soft mesh + grid — page atmosphere */
+.acadflow-page-bg {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(ellipse 100% 80% at 0% -20%, rgb(219 234 254 / 0.55), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgb(224 231 255 / 0.45), transparent 45%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgb(241 245 249 / 0.9), transparent 50%),
+    linear-gradient(to bottom, rgb(248 250 252), rgb(241 245 249 / 0.85));
+}
+
+.acadflow-grid-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.builder-input {
+  @apply w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs text-slate-800 outline-none transition-all;
+}
+.builder-input:focus {
+  @apply border-blue-500 ring-2 ring-blue-500/20;
+}

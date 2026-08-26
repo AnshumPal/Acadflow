@@ -1,0 +1,8 @@
+#!/bin/sh
+# Strips Cursor's injected "Made-with: Cursor" trailer (git gets --trailer from the agent).
+# One-time: git config core.hooksPath .githooks
+msg="$1"
+tmp=$(mktemp)
+[ -f "$msg" ] || exit 0
+sed '/^Made-with: Cursor$/d' "$msg" > "$tmp" && mv "$tmp" "$msg"
+exit 0

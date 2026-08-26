@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+ortools
+pandas
+openpyxl
+pydantic
+sqlalchemy
+# testing
+pytest
+httpx

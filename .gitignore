@@ -1,0 +1,21 @@
+# virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+npm-debug.log*
+
+# VS Code settings
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
