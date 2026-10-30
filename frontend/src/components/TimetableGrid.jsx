@@ -1,28 +1,8 @@
 import { DAY_LABELS } from '../data/samplePayload'
-
-const PERIOD_TIMES = [
-  '9–10',
-  '10–11',
-  '11–12',
-  '12–1',
-  '1–2',
-  '2–3',
-  '3–4',
-  '4–5',
-]
+import { PERIOD_TIMES, parseClassName } from '../utils/schedule'
 
 function slotClasses(sectionClasses, day, period) {
   return sectionClasses.filter((c) => c.day === day && c.period === period)
-}
-
-function classTitleAndBadges(courseName) {
-  const extra = /\s*\(Extra\)\s*$/i.test(courseName)
-  const rescheduled = /\s*\(Rescheduled\)\s*$/i.test(courseName)
-  const title = courseName
-    .replace(/\s*\(Extra\)\s*$/i, '')
-    .replace(/\s*\(Rescheduled\)\s*$/i, '')
-    .trim()
-  return { title, extra, rescheduled }
 }
 
 function slotAccent(cls) {
@@ -61,13 +41,14 @@ function ClassCard({ cls, onClassClick }) {
     )
   }
 
-  const { title, extra, rescheduled } = classTitleAndBadges(cls.course_name)
+  const { title, extra, rescheduled } = parseClassName(cls.course_name)
   const accent = slotAccent(cls)
 
   return (
     <button
       type="button"
       onClick={() => onClassClick(cls)}
+      aria-label={`${title}, ${DAY_LABELS[cls.day] ?? `Day ${cls.day + 1}`} period ${cls.period}, ${cls.room}. Open class actions`}
       className={`group w-full rounded-xl border border-slate-200/90 bg-gradient-to-br from-white to-slate-50/90 px-2.5 py-2 text-left shadow-sm ring-1 ring-slate-900/[0.03] transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200/80 hover:shadow-md hover:ring-blue-500/10 ${ACCENT_BORDER[accent]} border-l-[3px]`}
     >
       <div className="flex flex-wrap items-center gap-1">
