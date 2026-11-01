@@ -179,3 +179,49 @@ def test_excel_export_returns_xlsx():
     assert r.status_code == 200
     assert "spreadsheetml" in r.headers["content-type"]
     assert r.content[:2] == b"PK"  # xlsx is a zip
+
+
+# ---------- Dynamic Reschedule & Extra Class ----------
+
+def test_dynamic_reschedule_moves_class():
+    gen = client.post("/api/v1/generate", json=FEASIBLE_PAYLOAD).json()
+    sched = gen["schedule"]
+    target_course = FEASIBLE_PAYLOAD["courses"][0]  # DL
+    dl_class = next(c for c in sched["A"] if c["course_name"] == "DL")
+    target_day = (dl_class["day"] + 1) % 5
+    payload = {
+        "current_schedule": sched,
+        "target_day": target_day,
+        "course": target_course,
+        "all_rooms": ["R101", "Lab201"],
+        "num_days": 5,
+        "num_periods": 8,
+        "source_day": dl_class["day"],
+        "source_period": dl_class["period"],
+    }
+    r = client.post("/api/v1/reschedule-dynamic", json=payload)
+    assert r.status_code == 200
+    data = r.json()
+    assert data["status"] == "success"
+    assert "reschedule" in data
+    assert data["reschedule"]["tier"] in ("direct", "tier1_same_day", "tier2_cross_day")
+
+
+def test_schedule_extra_class():
+    gen = client.post("/api/v1/generate", json=FEASIBLE_PAYLOAD).json()
+    sched = gen["schedule"]
+    payload = {
+        "current_schedule": sched,
+        "course_id": "C1",
+        "section": "A",
+        "all_courses": FEASIBLE_PAYLOAD["courses"],
+        "all_rooms": ["R101", "Lab201"],
+        "num_days": 5,
+        "num_periods": 8,
+    }
+    r = client.post("/api/v1/schedule-extra", json=payload)
+    assert r.status_code == 200
+    data = r.json()
+    assert data["status"] == "success"
+    extra_classes = [c for c in data["schedule"]["A"] if "(Extra)" in c["course_name"]]
+    assert len(extra_classes) == 1
