@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   CalendarDays,
   Clock,
@@ -15,7 +15,9 @@ import {
   Plus,
   Settings,
   Code,
-  X
+  X,
+  ClipboardCheck,
+  TrendingUp
 } from 'lucide-react'
 import {
   generateTimetable,
@@ -24,11 +26,23 @@ import {
   rescheduleDynamic,
   getErrorMessage,
 } from './api/client'
+import { createLectureLog, deleteLectureLog } from './api/lectures'
 import ErrorBanner from './components/ErrorBanner'
 import TimetableGrid from './components/TimetableGrid'
 import AddExtraModal from './components/AddExtraModal'
 import RescheduleModal from './components/RescheduleModal'
+import ClassActionSheet from './components/ClassActionSheet'
+import LectureLogView from './components/lectures/LectureLogView'
+import ProgressDashboard from './components/progress/ProgressDashboard'
+import Toast from './components/ui/Toast'
+import ViewTabs from './components/ui/ViewTabs'
+import ViewHeader from './components/ui/ViewHeader'
+import SectionTabs from './components/ui/SectionTabs'
 import { samplePayload, DAY_LABELS } from './data/samplePayload'
+import { findCourseForClass, removeClasses, sessionOfClass } from './utils/schedule'
+import { formatDate, latestOccurrence } from './utils/calendar'
+import { logForSession } from './utils/lectureLogs'
+import { revertReschedule } from './utils/rescheduleUndo'
 
 const defaultPayload = samplePayload
 
@@ -41,16 +55,25 @@ const emptyPayload = {
   courses: []
 }
 
-function normalizeCourseName(name) {
-  return name.replace(/\s*\(Rescheduled\)\s*$/i, '').replace(/\s*\(Extra\)\s*$/i, '').trim()
-}
-
-function findCourseForClass(cls, section, catalog) {
-  const base = normalizeCourseName(cls.course_name)
-  return catalog.find((c) => c.section === section && c.name === base)
-}
-
 const SCHEDULE_STORAGE_KEY = 'acadflow_schedule_v1'
+// The course catalog is saved too, so a restored schedule is matched against the catalog it was
+// generated from (needed for rescheduling, lecture logs and progress).
+const PAYLOAD_STORAGE_KEY = 'acadflow_payload_v1'
+
+function loadPayloadFromStorage() {
+  try {
+    const raw = localStorage.getItem(PAYLOAD_STORAGE_KEY)
+    if (!raw) return null
+    const parsed = JSON.parse(raw)
+    const valid =
+      parsed &&
+      typeof parsed === 'object' &&
+      ['sections', 'teachers', 'rooms', 'courses'].every((field) => Array.isArray(parsed[field]))
+    return valid ? parsed : null
+  } catch {
+    return null
+  }
+}
 
 function loadScheduleFromStorage() {
   try {
@@ -74,15 +97,20 @@ export default function App() {
   const [info, setInfo] = useState('')
   
   // NEW: Top Level Navigation State
-  const [activeView, setActiveView] = useState('setup') // 'setup' | 'timetable'
-  
+  const [activeView, setActiveView] = useState('setup') // 'setup' | 'timetable' | 'lectures' | 'progress'
+
   const [extraModal, setExtraModal] = useState(null)
   const [rescheduleModal, setRescheduleModal] = useState(null)
+  const [actionSheet, setActionSheet] = useState(null) // { cls } of the clicked class card
+  const [logFocus, setLogFocus] = useState(null) // slot to open in the Lecture Log view
+  const [undo, setUndo] = useState(null) // { message, schedule, logId } offered on the success toast
+  const [logsRevision, setLogsRevision] = useState(0) // bumped when logs change outside the log views
+  const undoInFlight = useRef(false)
 
   // --- BUILDER STATE ---
   const [inputMode, setInputMode] = useState('visual') // 'visual' | 'json'
-  const [payload, setPayload] = useState(defaultPayload)
-  const [jsonInput, setJsonInput] = useState(JSON.stringify(defaultPayload, null, 2))
+  const [payload, setPayload] = useState(() => loadPayloadFromStorage() ?? defaultPayload)
+  const [jsonInput, setJsonInput] = useState(() => JSON.stringify(payload, null, 2))
 
   // New Item Input States
   const [newSection, setNewSection] = useState('')
@@ -160,12 +188,17 @@ export default function App() {
         setActiveView('timetable')
       }
     } catch (e) {
-      setSchedule(null)
+      // Keep the last good timetable (and the logs tied to it) when a new solve fails.
       setError(getErrorMessage(e))
     } finally {
       setLoading(false)
     }
   }, [payload])
+
+  // The timetable, log and progress views need a schedule; fall back to setup without one.
+  useEffect(() => {
+    if (!schedule && activeView !== 'setup') setActiveView('setup')
+  }, [schedule, activeView])
 
   useEffect(() => {
     const saved = loadScheduleFromStorage()
@@ -185,6 +218,19 @@ export default function App() {
       console.warn('acadflow: could not persist schedule', e)
     }
   }, [schedule])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(PAYLOAD_STORAGE_KEY, JSON.stringify(payload))
+    } catch (e) {
+      console.warn('acadflow: could not persist course catalog', e)
+    }
+  }, [payload])
+
+  const dismissInfo = useCallback(() => {
+    setInfo('')
+    setUndo(null)
+  }, [])
 
   const clearSavedAndRegenerate = useCallback(async () => {
     try { localStorage.removeItem(SCHEDULE_STORAGE_KEY) } catch { }
@@ -293,10 +339,25 @@ export default function App() {
     }
   }
 
-  const handleRescheduleSubmit = async (targetDay) => {
-    if (!schedule || rescheduleModal === null) return
-    const cls = rescheduleModal.cls
+  // The class being moved, and the schedule without it. The backend only appends the new slot,
+  // so the original (both periods, for a lab) is taken out here before the request.
+  const rescheduleContext = useMemo(() => {
+    if (!rescheduleModal || !schedule) return null
+    const { cls } = rescheduleModal
     const course = findCourseForClass(cls, activeSection, payload.courses)
+    const session = sessionOfClass(sectionClasses, cls, payload.courses, activeSection)
+    const baseSchedule = removeClasses(schedule, activeSection, session?.classes ?? [cls])
+    return { cls, course, session, baseSchedule }
+  }, [rescheduleModal, schedule, activeSection, payload.courses, sectionClasses])
+
+  const actionSheetSession = useMemo(
+    () => (actionSheet ? sessionOfClass(sectionClasses, actionSheet.cls, payload.courses, activeSection) : null),
+    [actionSheet, sectionClasses, payload.courses, activeSection],
+  )
+
+  const handleRescheduleSubmit = async ({ targetDay, targetPeriod, missed }) => {
+    if (!rescheduleContext) return
+    const { cls, course, session, baseSchedule } = rescheduleContext
     if (!course) {
       setError('Could not match this slot to a catalog course for rescheduling.')
       return
@@ -305,16 +366,40 @@ export default function App() {
     setLoading(true)
     try {
       const data = await rescheduleDynamic({
-        current_schedule: schedule,
+        current_schedule: baseSchedule,
         target_day: targetDay,
         course,
         all_rooms: payload.rooms,
         num_periods: payload.num_periods,
+        num_days: payload.num_days,
+        ...(targetPeriod ? { target_period: targetPeriod } : {}),
       })
       if (data.status === 'success' && data.schedule) {
+        const previousSchedule = schedule
         setSchedule(data.schedule)
-        setInfo(data.message || 'Schedule updated.')
         setRescheduleModal(null)
+        let message = `${course.name} moved to ${DAY_LABELS[targetDay]}. ${data.message || ''}`.trim()
+
+        let missedLog = null
+        if (missed && session) {
+          try {
+            missedLog = await createLectureLog(
+              logForSession({
+                section: activeSection,
+                session,
+                date: missed.date,
+                status: 'not_held',
+                reason: missed.reason,
+                remarks: `Rescheduled to ${DAY_LABELS[targetDay]}`,
+              }),
+            )
+            message += ` The ${formatDate(missed.date)} lecture is recorded as not held.`
+          } catch (e) {
+            setError(`The class was moved, but the missed lecture was not recorded: ${getErrorMessage(e)}`)
+          }
+        }
+        setUndo({ message, schedule: previousSchedule, logId: missedLog?.id ?? null })
+        setInfo(message)
       }
     } catch (e) {
       setError(getErrorMessage(e))
@@ -322,6 +407,54 @@ export default function App() {
       setLoading(false)
     }
   }
+
+  // Reverts the timetable and removes the "not held" log created with the move. If the log
+  // cannot be removed, nothing changes and the toast keeps offering Undo.
+  const undoReschedule = async () => {
+    if (!undo || undoInFlight.current) return
+    undoInFlight.current = true
+    setLoading(true)
+    try {
+      const { schedule: previous, removedLog } = await revertReschedule(undo, deleteLectureLog)
+      setError('')
+      setSchedule(previous)
+      setUndo(null)
+      if (removedLog) setLogsRevision((n) => n + 1)
+      setInfo(removedLog ? 'Reschedule undone and the not-held entry removed.' : 'Reschedule undone.')
+    } catch (e) {
+      setError(`Undo failed, so nothing was changed: ${getErrorMessage(e)}`)
+    } finally {
+      undoInFlight.current = false
+      setLoading(false)
+    }
+  }
+
+  // Jump from a class card to its most recent occurrence in the Lecture Log view.
+  const openLectureLog = (cls, status) => {
+    const session = sessionOfClass(sectionClasses, cls, payload.courses, activeSection)
+    setActionSheet(null)
+    setLogFocus({
+      date: latestOccurrence(cls.day),
+      period: session?.period ?? cls.period,
+      courseId: session?.course_id ?? null,
+      status,
+      nonce: Date.now(),
+    })
+    setActiveView('lectures')
+  }
+
+  // Plain navigation opens the Lecture Log on today, not on a slot picked earlier.
+  const changeView = (view) => {
+    setLogFocus(null)
+    setActiveView(view)
+  }
+
+  const views = [
+    { id: 'setup', label: 'Configuration & Data', shortLabel: 'Setup', icon: Settings },
+    { id: 'timetable', label: 'Generated Timetable', shortLabel: 'Timetable', icon: Grid3X3, disabled: !schedule },
+    { id: 'lectures', label: 'Lecture Log', shortLabel: 'Lectures', icon: ClipboardCheck, disabled: !schedule },
+    { id: 'progress', label: 'Syllabus Progress', shortLabel: 'Progress', icon: TrendingUp, disabled: !schedule },
+  ]
 
   return (
     <div className="acadflow-page-bg acadflow-grid-noise relative min-h-screen">
@@ -392,38 +525,13 @@ export default function App() {
         <main className="mx-auto max-w-[1600px] px-4 pb-20 pt-8 sm:px-6 lg:px-8">
           
           {/* TOP TABS - The View Switcher */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/60 shadow-inner backdrop-blur-sm">
-              <button
-                onClick={() => setActiveView('setup')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-semibold transition-all ${
-                  activeView === 'setup'
-                    ? 'bg-white text-blue-600 shadow-sm ring-1 ring-black/5'
-                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                }`}
-              >
-                <Settings className="h-4 w-4" /> 1. Configuration & Data
-              </button>
-              <button
-                onClick={() => schedule && setActiveView('timetable')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-semibold transition-all ${
-                  activeView === 'timetable'
-                    ? 'bg-white text-blue-600 shadow-sm ring-1 ring-black/5'
-                    : !schedule
-                    ? 'text-slate-400 cursor-not-allowed'
-                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
-                }`}
-              >
-                <Grid3X3 className="h-4 w-4" /> 2. Generated Timetable
-              </button>
-            </div>
-          </div>
+          <ViewTabs views={views} active={activeView} onChange={changeView} />
 
           <ErrorBanner message={error} onDismiss={() => setError('')} />
 
           {/* VIEW 1: CONFIGURATION BUILDER */}
           {activeView === 'setup' && (
-            <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+            <div className="max-w-4xl mx-auto space-y-4 motion-safe:animate-fade-up">
               <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
                 <div className="flex border-b border-slate-200 bg-slate-50 p-2 gap-2">
                   <button onClick={() => setInputMode('visual')} className={`flex-1 flex items-center justify-center gap-2 rounded-lg py-2 text-sm font-medium transition ${inputMode === 'visual' ? 'bg-white shadow-sm text-blue-600' : 'text-slate-500 hover:text-slate-900'}`}>
@@ -626,49 +734,76 @@ export default function App() {
 
           {/* VIEW 2: THE FULL-WIDTH TIMETABLE */}
           {activeView === 'timetable' && schedule && (
-            <div className="w-full animate-in fade-in slide-in-from-bottom-2 duration-300">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 border-b border-slate-200/60 pb-6">
-                <div className="flex items-center gap-3 text-sm text-slate-500 mb-4 sm:mb-0">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 shadow-sm ring-1 ring-blue-100/50">
-                    <Clock className="h-5 w-5" strokeWidth={2} />
-                  </span>
-                  <div className="flex flex-col">
-                    <span className="text-lg font-bold text-slate-800 leading-tight">Section: {activeSection}</span>
-                    <span className="text-sm text-slate-400">{DAY_LABELS.slice(0, payload.num_days).join(', ')} · periods 1–{payload.num_periods}</span>
-                  </div>
-                </div>
-                {sections.length > 0 && (
-                  <div className="inline-flex flex-wrap rounded-2xl border border-slate-200/70 bg-slate-100/50 p-1.5 shadow-inner">
-                    {sections.map((sec) => (
-                      <button
-                        key={sec}
-                        onClick={() => setActiveSection(sec)}
-                        className={`rounded-xl px-5 py-2.5 text-sm font-semibold transition-all ${
-                          sec === activeSection
-                            ? 'bg-blue-600 text-white shadow-md'
-                            : 'text-slate-600 hover:bg-white hover:text-slate-900'
-                        }`}
-                      >
-                        {sec}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="w-full motion-safe:animate-fade-up">
+              <ViewHeader
+                icon={Clock}
+                title={`Section: ${activeSection}`}
+                subtitle={`${DAY_LABELS.slice(0, payload.num_days).join(', ')} · periods 1–${payload.num_periods}`}
+              >
+                <SectionTabs sections={sections} active={activeSection} onChange={setActiveSection} />
+              </ViewHeader>
 
-              <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xl">
+              <div className="bg-white rounded-3xl p-3 sm:p-6 border border-slate-200/80 shadow-xl">
                 <TimetableGrid
                   sectionClasses={sectionClasses}
                   numDays={payload.num_days}
                   numPeriods={payload.num_periods}
                   onEmptySlot={(day, period) => setExtraModal({ day, period })}
-                  onClassClick={(cls) => !cls.is_recess && setRescheduleModal({ cls })}
+                  onClassClick={(cls) => !cls.is_recess && setActionSheet({ cls })}
                 />
               </div>
             </div>
           )}
+
+          {/* VIEW 3: LECTURE COMPLETION LOG */}
+          {activeView === 'lectures' && schedule && (
+            <LectureLogView
+              section={activeSection}
+              sections={sections}
+              onSectionChange={setActiveSection}
+              sectionClasses={sectionClasses}
+              courses={coursesForActiveSection}
+              numDays={payload.num_days}
+              focus={logFocus}
+              logsRevision={logsRevision}
+              onNotify={setInfo}
+            />
+          )}
+
+          {/* VIEW 4: SYLLABUS PROGRESS & AUDIT */}
+          {activeView === 'progress' && schedule && (
+            <ProgressDashboard
+              section={activeSection}
+              sections={sections}
+              onSectionChange={setActiveSection}
+              sectionClasses={sectionClasses}
+              courses={coursesForActiveSection}
+              numDays={payload.num_days}
+              logsRevision={logsRevision}
+              onNotify={setInfo}
+              onOpenLectureLog={() => changeView('lectures')}
+            />
+          )}
         </main>
       </div>
+
+      <Toast
+        message={info}
+        onDismiss={dismissInfo}
+        action={undo && undo.message === info ? { label: 'Undo', onClick: undoReschedule } : null}
+      />
+
+      <ClassActionSheet
+        open={actionSheet !== null}
+        cls={actionSheet?.cls}
+        session={actionSheetSession}
+        onClose={() => setActionSheet(null)}
+        onReschedule={() => {
+          setRescheduleModal({ cls: actionSheet.cls })
+          setActionSheet(null)
+        }}
+        onLog={(status) => openLectureLog(actionSheet.cls, status)}
+      />
 
       <AddExtraModal
         open={extraModal !== null}
@@ -682,13 +817,12 @@ export default function App() {
 
       <RescheduleModal
         open={rescheduleModal !== null}
+        context={rescheduleContext}
         onClose={() => setRescheduleModal(null)}
-        classLabel={
-          rescheduleModal
-            ? `${normalizeCourseName(rescheduleModal.cls.course_name)} · Period ${rescheduleModal.cls.period} · ${DAY_LABELS[rescheduleModal.cls.day]}`
-            : ''
-        }
+        section={activeSection}
+        rooms={payload.rooms}
         numDays={payload.num_days}
+        numPeriods={payload.num_periods}
         loading={loading}
         onSubmit={handleRescheduleSubmit}
       />
