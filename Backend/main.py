@@ -25,6 +25,7 @@ try:
     from .solver import generate_schedule
     from .exporter import build_excel_timetable
     from . import scheduling_engine as engine
+    from .syllabus import router as syllabus_router, find_extra_class_slot
 except (ImportError, ValueError):
     from models import (
         Course,
@@ -41,6 +42,7 @@ except (ImportError, ValueError):
     from solver import generate_schedule
     from exporter import build_excel_timetable
     import scheduling_engine as engine
+    from syllabus import router as syllabus_router, find_extra_class_slot
 
 logger = logging.getLogger("acadflow")
 
@@ -64,6 +66,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount Syllabus tracking & audit router
+app.include_router(syllabus_router)
 
 
 @app.get("/")
@@ -183,67 +188,41 @@ async def schedule_extra_class(request: ExtraClassRequest):
         teachers = target_course.teachers
         is_course_lab = target_course.is_lab
 
-        # Determine the days to search: specific day if requested, or entire week
-        days_to_search = [request.target_day] if request.target_day is not None else range(request.num_days)
-
-        for d in days_to_search:
-            for p in range(1, request.num_periods + 1):
-                # Check 1: Is the section busy on this day & period
-                section_busy = any(c.day == d and c.period == p for c in schedule.get(section, []))
-                if section_busy:
-                    continue
-
-                # Check 2: Are the required teachers busy in ANY other section
-                teacher_busy = False
-                for sec, classes in schedule.items():
-                    for c in classes:
-                        if c.day == d and c.period == p and any(t in c.teachers for t in teachers):
-                            teacher_busy = True
-                            break
-                    if teacher_busy:
-                        break
-
-                if teacher_busy:
-                    continue
-
-                # Check 3: Room Availability & Strict Lab Matching
-                occupied_rooms = [
-                    c.room for sec, classes in schedule.items() for c in classes
-                    if c.day == d and c.period == p and not c.is_recess
-                ]
-
-                available_rooms = []
-                for r in request.all_rooms:
-                    is_lab_room = "lab" in r.lower()
-                    if r not in occupied_rooms and is_course_lab == is_lab_room:
-                        available_rooms.append(r)
-
-                if available_rooms:
-                    new_class = ScheduledClass(
-                        day=d,
-                        period=p,
-                        room=available_rooms[0],
-                        course_name=target_course.name + " (Extra)",
-                        teachers=teachers,
-                    )
-
-                    if section not in schedule:
-                        schedule[section] = []
-                    schedule[section].append(new_class)
-                    schedule[section] = sorted(schedule[section], key=lambda x: (x.day, x.period))
-
-                    day_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-                    day_label = day_names[d] if d < len(day_names) else f"Day {d+1}"
-                    return {
-                        "status": "success",
-                        "schedule": schedule,
-                        "message": f"Extra class scheduled successfully on {day_label}, Period {p} in {available_rooms[0]}.",
-                    }
-
-        raise HTTPException(
-            status_code=400,
-            detail="Could not find a conflict-free slot for this extra class. All teachers or suitable rooms are busy.",
+        slot_result = find_extra_class_slot(
+            current_schedule=schedule,
+            section=section,
+            teachers=teachers,
+            is_lab=is_course_lab,
+            all_rooms=request.all_rooms,
+            num_days=request.num_days,
+            num_periods=request.num_periods,
+            target_day=request.target_day,
         )
+
+        if not slot_result["success"]:
+            raise HTTPException(status_code=400, detail=slot_result["message"])
+
+        d, p, room = slot_result["day"], slot_result["period"], slot_result["room"]
+        new_class = ScheduledClass(
+            day=d,
+            period=p,
+            room=room,
+            course_name=target_course.name + " (Extra)",
+            teachers=teachers,
+        )
+
+        if section not in schedule:
+            schedule[section] = []
+        schedule[section].append(new_class)
+        schedule[section] = sorted(schedule[section], key=lambda x: (x.day, x.period))
+
+        day_names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        day_label = day_names[d] if d < len(day_names) else f"Day {d+1}"
+        return {
+            "status": "success",
+            "schedule": schedule,
+            "message": f"Extra class scheduled successfully on {day_label}, Period {p} in {room}.",
+        }
     except HTTPException:
         raise
     except Exception as e:

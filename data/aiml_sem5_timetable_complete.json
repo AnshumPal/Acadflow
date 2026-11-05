@@ -1,0 +1,6081 @@
+{
+  "metadata": {
+    "title": "B.Tech CSE (AIML) Semester V Timetable",
+    "institution": "Ramdeobaba University, Nagpur",
+    "session": "2026-27",
+    "effective_from": "2026-07-20",
+    "source_file": "AIML-TT-WEF-20-07-2026-Final.xlsx",
+    "included_sheets": [
+      "AIML-VA",
+      "AIML-VB",
+      "AIML-VC",
+      "AIML-VIIA",
+      "AIML-VIIB",
+      "AIML-VIIC",
+      "Updated-load",
+      "Master=TT",
+      "Classwise Load",
+      "R.W",
+      "N.L",
+      "Master TT"
+    ],
+    "notes": [
+      "Timetable cell descriptions are preserved as source text; lab groups and faculty details may be embedded in the activity string.",
+      "Empty periods are represented as activity=null and type=free.",
+      "The sections object retains the sample's normalized timetable structure for VA, VB, and VC.",
+      "raw_sheets contains non-empty cell values from all 12 workbook sheets, including timetable sheets, master timetables, faculty timetables, and load-allocation sheets.",
+      "In raw_sheets, values are keyed by Excel column letter and row number so source positions are preserved; blank cells are omitted."
+    ],
+    "all_workbook_sheets": [
+      "AIML-VA",
+      "AIML-VB",
+      "AIML-VC",
+      "AIML-VIIA",
+      "AIML-VIIB",
+      "AIML-VIIC",
+      "Updated-load",
+      "Master=TT",
+      "Classwise Load",
+      "R.W",
+      "N.L",
+      "Master TT"
+    ]
+  },
+  "sections": {
+    "VA": {
+      "source_sheet": "AIML-VA",
+      "semester": 5,
+      "section": "A",
+      "effective_from": "2026-07-20",
+      "session": "2026-27",
+      "time_slots": [
+        {
+          "period": 1,
+          "start_end": "9:00-10:00"
+        },
+        {
+          "period": 2,
+          "start_end": "10:00-11:00"
+        },
+        {
+          "period": 3,
+          "start_end": "11:00-12:00"
+        },
+        {
+          "period": 4,
+          "start_end": "12:00-1:00"
+        },
+        {
+          "period": 5,
+          "start_end": "1:00-2:00"
+        },
+        {
+          "period": 6,
+          "start_end": "2:00-3:00"
+        },
+        {
+          "period": 7,
+          "start_end": "3:00-4:00"
+        },
+        {
+          "period": 8,
+          "start_end": "4:00-5:00"
+        }
+      ],
+      "timetable": [
+        {
+          "day": "Monday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "OE-DT-406",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "M.L(A.P)DT-406",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "C.N(N.L) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "CN Lab A1/A2(N.L/P.A) DT609)DT-/C&EC Lab (A3/A4 H.P/P.D)DT-509",
+              "type": "lab"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "CN Lab A3/A4(N.L/P.A) DT609)DT-/C&EC Lab (A1/A2 H.P/P.D)DT-509",
+              "type": "lab"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "M.L(A.P)DT-403",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "Mentor/Mentee",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "M.L(A.P) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "C&EC(H.P)DT-609",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "ML ( A1/A2( A.P/ A.G)-DT-509)/DAV Lab A3/A4(K.V/S.M)-DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "C.N(N.L)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "C&EC(H.P)DT-609",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "ML ( A3/A4( A.P/ A.G)-DT-509)/DAV Lab A1/A2(K.V/S.M)-DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "C&EC(H.P)DT-403",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "C.N(N.L) DT-403",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Saturday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "Idea Lab (S.M)(DT-403)",
+              "type": "lab"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        }
+      ],
+      "courses": [
+        {
+          "code": "24CS03TH0501",
+          "name": "Machine Learning (ML)",
+          "coordinator": "Dr. A. Pimpalkar"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab (ML Lab)",
+          "coordinator": "Dr. A. Pimpalkar (A1, A3))"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab (ML Lab)",
+          "coordinator": "Prof. A. Gudadhe (A2, A4)"
+        },
+        {
+          "code": "24CS03TH0502",
+          "name": "Cloud & Edge Computing for AI ( C&EC)",
+          "coordinator": "Prof. H. Patil"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+          "coordinator": "Prof. H. Patil (A1, A3)"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+          "coordinator": "Prof. P. Dhule(A2,A4)"
+        },
+        {
+          "code": "24CS03TH0503",
+          "name": "Computer Networks (CN)",
+          "coordinator": "Prof. N. Lanke"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab (CN LAb)",
+          "coordinator": "Prof. N. Lanke (A1, A3)"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab (CN LAb)",
+          "coordinator": "Dr. P. Agarkar (A2,A4)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab (DAV Lab)",
+          "coordinator": "Prof. Karthikeyan V. (A1, A3)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab (DAV Lab)",
+          "coordinator": "Prof. S. Meshram (A2,A4)"
+        },
+        {
+          "code": "24CS03PR0505",
+          "name": "Idea Lab",
+          "coordinator": "Prof. S. Meshram"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Programming for Data Science and AI(D. Junghare)"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Image Processing Generative Models( Sonam Meshram)"
+        },
+        {
+          "code": "24CSOEC01TH050",
+          "name": "Open elective-III",
+          "coordinator": "Kartekiyan V."
+        },
+        {
+          "code": "24CS03TH0507",
+          "name": "MDM-II",
+          "coordinator": null
+        }
+      ]
+    },
+    "VB": {
+      "source_sheet": "AIML-VB",
+      "semester": 5,
+      "section": "B",
+      "effective_from": "2026-07-20",
+      "session": "2026-27",
+      "time_slots": [
+        {
+          "period": 1,
+          "start_end": "9:00-10:00"
+        },
+        {
+          "period": 2,
+          "start_end": "10:00-11:00"
+        },
+        {
+          "period": 3,
+          "start_end": "11:00-12:00"
+        },
+        {
+          "period": 4,
+          "start_end": "12:00-1:00"
+        },
+        {
+          "period": 5,
+          "start_end": "1:00-2:00"
+        },
+        {
+          "period": 6,
+          "start_end": "2:00-3:00"
+        },
+        {
+          "period": 7,
+          "start_end": "3:00-4:00"
+        },
+        {
+          "period": 8,
+          "start_end": "4:00-5:00"
+        }
+      ],
+      "timetable": [
+        {
+          "day": "Monday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "CN Lab B1/B2(P.A/R.P) DT609)/DAV Lab B3/B4(A.L/S.M)-DT-509",
+              "type": "lab"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "C&EC(H.P)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "C.N(R.W) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": "M.L(A.P)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "OE(DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "M.L(A.P)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "C.N(R.W) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "CN Lab B3/B4(P.A/R.P) DT609)DT-/C&EC Lab (B1/B2 H.P/P.D)DT-509",
+              "type": "lab"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "Mentor/Mentee",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "M.L(A.P)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "C&EC(H.P)DT-412",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "ML ( B1/B2( A.P/ A.G)-DT-509)/C&EC Lab (B3/B4 H.P/P.D)DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "C.N(R.W) DT-509",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "C&EC(H.P)DT-403",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "ML ( B3/B4( A.P/ A.G)-DT-509)/DAV Lab B1/B2(K.V/S.M)-DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Saturday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "Idea Lab (A.L)(DT-406)",
+              "type": "lab"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        }
+      ],
+      "courses": [
+        {
+          "code": "24CS03TH0501",
+          "name": "Machine Learning (ML)",
+          "coordinator": "Dr. A. Pimpalkar"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab (ML Lab)",
+          "coordinator": "Dr. A. Pimpalkar (B1, B3)"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab (ML Lab)",
+          "coordinator": "A. Gudadhe( B2,B4)"
+        },
+        {
+          "code": "24CS03TH0502",
+          "name": "Cloud & Edge Computing for AI ( C&EC)",
+          "coordinator": "Prof. H. Patil"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+          "coordinator": "Prof. H. Patil (B1, B3)"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+          "coordinator": "Dr. P. Dhule(B2,B4)"
+        },
+        {
+          "code": "24CS03TH0503",
+          "name": "Computer Networks (CN)",
+          "coordinator": "Dr. R. Welekar"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab (CN LAb)",
+          "coordinator": "Dr. P. Agarkar (B1,B3)"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab (CN LAb)",
+          "coordinator": "Prof. R. Padegaonkar (B2,B4)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab (DAV Lab)",
+          "coordinator": "Prof. Karthikeyan V. (B1) Prof. A. Lokhande( B3)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab (DAV Lab)",
+          "coordinator": "Prof. S. Meshram(B2,B4)"
+        },
+        {
+          "code": "24CS03PR0505",
+          "name": "Idea Lab",
+          "coordinator": "A. Lokhande"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Programming for Data Science and AI(D. Junghare)"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Image Processing Generative Models( Sonam Meshram)"
+        },
+        {
+          "code": "24CSOEC01TH050",
+          "name": "Open elective-III",
+          "coordinator": "A. Lokhande"
+        },
+        {
+          "code": "24CS03TH0507",
+          "name": "MDM-II",
+          "coordinator": null
+        }
+      ]
+    },
+    "VC": {
+      "source_sheet": "AIML-VC",
+      "semester": 5,
+      "section": "C",
+      "effective_from": "2026-07-20",
+      "session": "2026-27",
+      "time_slots": [
+        {
+          "period": 1,
+          "start_end": "9:00-10:00"
+        },
+        {
+          "period": 2,
+          "start_end": "10:00-11:00"
+        },
+        {
+          "period": 3,
+          "start_end": "11:00-12:00"
+        },
+        {
+          "period": 4,
+          "start_end": "12:00-1:00"
+        },
+        {
+          "period": 5,
+          "start_end": "1:00-2:00"
+        },
+        {
+          "period": 6,
+          "start_end": "2:00-3:00"
+        },
+        {
+          "period": 7,
+          "start_end": "3:00-4:00"
+        },
+        {
+          "period": 8,
+          "start_end": "4:00-5:00"
+        }
+      ],
+      "timetable": [
+        {
+          "day": "Monday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "M.L(A.G)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "ML ( C3/C4(A.G/P.Da)-DT-509)/DAV Lab C1/C2(A.L/K.V)-DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "Mentor/Mentee",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "M.L(A.G)DT-403",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "C.N(R.W) DT-406",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "ML ( C1/C2(A.G/P.Da)-DT-509)/DAV Lab C3/C4(S.M/K.V)-DT-609",
+              "type": "lab"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "CN Lab C3/C4(R.P/N.L) DT609)DT-/C&EC Lab (C1/C2 H.P/P.A)DT-509",
+              "type": "lab"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "C&EC(P.A)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": "Idea Lab (R.P)(DT-612)",
+              "type": "lab"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "C.N(R.W) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "M.L(A.G)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "C&EC(P.A)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "OE-DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "C.N(R.W) DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": "RECESS",
+              "type": "recess"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "C&EC(P.A)DT-612",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        },
+        {
+          "day": "Saturday",
+          "slots": [
+            {
+              "period": 1,
+              "time": "9:00-10:00",
+              "activity": "MDM",
+              "type": "lecture"
+            },
+            {
+              "period": 2,
+              "time": "10:00-11:00",
+              "activity": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+              "type": "lecture"
+            },
+            {
+              "period": 3,
+              "time": "11:00-12:00",
+              "activity": "CN Lab C1/C2(R.P/N.L) DT405)DT-/C&EC Lab (C3/C4 P.D/P.A)DT-409",
+              "type": "lab"
+            },
+            {
+              "period": 4,
+              "time": "12:00-1:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 5,
+              "time": "1:00-2:00",
+              "activity": "CSE-Honor",
+              "type": "lecture"
+            },
+            {
+              "period": 6,
+              "time": "2:00-3:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 7,
+              "time": "3:00-4:00",
+              "activity": null,
+              "type": "free"
+            },
+            {
+              "period": 8,
+              "time": "4:00-5:00",
+              "activity": null,
+              "type": "free"
+            }
+          ]
+        }
+      ],
+      "courses": [
+        {
+          "code": "24CS03TH0501",
+          "name": "Machine Learning",
+          "coordinator": "Prof. A. Gudadhe"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab",
+          "coordinator": "Prof. A. Gudadhe (C1, C3)"
+        },
+        {
+          "code": "24CS03PR0501",
+          "name": "Machine Learning Lab",
+          "coordinator": "Dr. P. Dandekar(C2, C4)"
+        },
+        {
+          "code": "24CS03TH0502",
+          "name": "Cloud & Edge Computing for AI",
+          "coordinator": "Dr. P. Agarkar"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab",
+          "coordinator": "Prof. H. Patil (C1) Prof. P. Dhule (C3)"
+        },
+        {
+          "code": "24CS03PR0502",
+          "name": "Cloud & Edge Computing for AI Lab",
+          "coordinator": "Dr. P. Agarkar (C2,C4)"
+        },
+        {
+          "code": "24CS03TH0503",
+          "name": "Computer Networks",
+          "coordinator": "Dr. R. Welekar"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab",
+          "coordinator": "Prof. R. Padegaonkar (C1,C3)"
+        },
+        {
+          "code": "24CS03PR0503",
+          "name": "Computer Networks Lab",
+          "coordinator": "Prof. N. Lanke (C2, C4)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab",
+          "coordinator": "Prof. A. Lokhade(C1)Prof. S. Meshram (C3)"
+        },
+        {
+          "code": "24CS03PR0504",
+          "name": "Data Analytics and Visualization Lab",
+          "coordinator": "Karthikeyan V. (C2,C4)"
+        },
+        {
+          "code": "24CS03PR0505",
+          "name": "Idea Lab",
+          "coordinator": "Prof. R. Padegaonkar"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Programming for Data Science and AI(D. Junghare)"
+        },
+        {
+          "code": "24CS03TH0506",
+          "name": "Program Elective-I",
+          "coordinator": "Image Processing Generative Models( Sonam Meshram)"
+        },
+        {
+          "code": "24CSOEC01TH050",
+          "name": "Open elective-III",
+          "coordinator": "P. Dhule"
+        },
+        {
+          "code": "24CS03TH0507",
+          "name": "MDM-II",
+          "coordinator": null
+        }
+      ]
+    }
+  },
+  "raw_sheets": {
+    "AIML-VA": {
+      "max_row": 232,
+      "max_column": 25,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "V  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: V A",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "V A",
+            "D": "OE-DT-406",
+            "E": "M.L(A.P)DT-406",
+            "F": "RECESS",
+            "G": "C.N(N.L) DT-612",
+            "H": "CN Lab A1/A2(N.L/P.A) DT609)DT-/C&EC Lab (A3/A4 H.P/P.D)DT-509"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "V A",
+            "D": "CN Lab A3/A4(N.L/P.A) DT609)DT-/C&EC Lab (A1/A2 H.P/P.D)DT-509",
+            "F": "RECESS",
+            "G": "M.L(A.P)DT-403",
+            "H": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "V A",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "M.L(A.P) DT-612",
+            "F": "RECESS",
+            "G": "C&EC(H.P)DT-609",
+            "H": "ML ( A1/A2( A.P/ A.G)-DT-509)/DAV Lab A3/A4(K.V/S.M)-DT-609"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "C.N(N.L)DT-612",
+            "E": "RECESS",
+            "F": "C&EC(H.P)DT-609",
+            "G": "ML ( A3/A4( A.P/ A.G)-DT-509)/DAV Lab A1/A2(K.V/S.M)-DT-609",
+            "L": "405,409 thur 12-2 Ds"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+            "E": "C&EC(H.P)DT-403",
+            "F": "C.N(N.L) DT-403",
+            "G": "RECESS",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "Idea Lab (S.M)(DT-403)",
+            "G": "CSE-Honor "
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "24CS03TH0501",
+            "B": "Machine Learning (ML)",
+            "E": "Dr. A. Pimpalkar"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "Dr. A. Pimpalkar (A1, A3))"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "Prof. A. Gudadhe (A2, A4)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "24CS03TH0502",
+            "B": "Cloud & Edge Computing for AI ( C&EC)",
+            "E": "Prof. H. Patil"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Prof. H. Patil (A1, A3)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Prof. P. Dhule(A2,A4)"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "24CS03TH0503",
+            "B": "Computer Networks (CN)",
+            "E": "Prof. N. Lanke "
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Prof. N. Lanke (A1, A3)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Dr. P. Agarkar (A2,A4)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. Karthikeyan V. (A1, A3)"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. S. Meshram (A2,A4)"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "24CS03PR0505",
+            "B": "Idea Lab",
+            "E": "Prof. S. Meshram"
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Programming for Data\nScience and AI(D. Junghare)"
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Image Processing  Generative\nModels( Sonam Meshram)"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "A": "24CSOEC01TH050",
+            "B": "Open elective-III",
+            "E": "Kartekiyan V."
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "A": "24CS03TH0507",
+            "B": "MDM-II"
+          }
+        }
+      ]
+    },
+    "AIML-VB": {
+      "max_row": 232,
+      "max_column": 26,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "V  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: V B",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "V B",
+            "D": "CN Lab B1/B2(P.A/R.P) DT609)/DAV Lab B3/B4(A.L/S.M)-DT-509",
+            "F": "C&EC(H.P)DT-612",
+            "G": "RECESS",
+            "H": "C.N(R.W) DT-612",
+            "I": "M.L(A.P)DT-612"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "V B",
+            "D": "OE(DT-612)",
+            "E": "M.L(A.P)DT-612",
+            "F": "RECESS",
+            "G": "C.N(R.W) DT-612",
+            "H": "CN Lab B3/B4(P.A/R.P) DT609)DT-/C&EC Lab (B1/B2 H.P/P.D)DT-509"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "V B",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "RECESS",
+            "F": "Mentor/Mentee",
+            "G": "M.L(A.P)DT-612",
+            "H": "C&EC(H.P)DT-412"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "V B",
+            "C": "MDM",
+            "D": "ML ( B1/B2( A.P/ A.G)-DT-509)/C&EC Lab (B3/B4 H.P/P.D)DT-609",
+            "F": "C.N(R.W) DT-509",
+            "G": "RECESS",
+            "H": "C&EC(H.P)DT-403"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "V B",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+            "E": "RECESS",
+            "F": "ML ( B3/B4( A.P/ A.G)-DT-509)/DAV Lab B1/B2(K.V/S.M)-DT-609",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "V B",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "Idea Lab (A.L)(DT-406)",
+            "G": "CSE-Honor "
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "24CS03TH0501",
+            "B": "Machine Learning (ML)",
+            "E": "Dr. A. Pimpalkar"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "Dr. A. Pimpalkar (B1, B3)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "A. Gudadhe( B2,B4)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "24CS03TH0502",
+            "B": "Cloud & Edge Computing for AI ( C&EC)",
+            "E": "Prof. H. Patil"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Prof. H. Patil (B1, B3)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Dr. P. Dhule(B2,B4)"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "24CS03TH0503",
+            "B": "Computer Networks (CN)",
+            "E": "Dr. R. Welekar"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Dr. P. Agarkar (B1,B3)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Prof. R. Padegaonkar (B2,B4)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. Karthikeyan V. (B1) Prof. A. Lokhande( B3)"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. S. Meshram(B2,B4)"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "24CS03PR0505",
+            "B": "Idea Lab",
+            "E": "A. Lokhande"
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Programming for Data\nScience and AI(D. Junghare)"
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Image Processing Generative\nModels( Sonam Meshram)"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "A": "24CSOEC01TH050",
+            "B": "Open elective-III",
+            "E": "A. Lokhande"
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "A": "24CS03TH0507",
+            "B": "MDM-II"
+          }
+        }
+      ]
+    },
+    "AIML-VC": {
+      "max_row": 232,
+      "max_column": 25,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "V  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: V C",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "V C",
+            "D": "M.L(A.G)DT-612",
+            "E": "RECESS",
+            "F": "ML ( C3/C4(A.G/P.Da)-DT-509)/DAV Lab C1/C2(A.L/K.V)-DT-609",
+            "H": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "V C",
+            "C": "M.L(A.G)DT-403",
+            "D": "RECESS",
+            "E": "C.N(R.W) DT-406",
+            "F": "ML ( C1/C2(A.G/P.Da)-DT-509)/DAV Lab C3/C4(S.M/K.V)-DT-609"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "V C",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "CN Lab C3/C4(R.P/N.L) DT609)DT-/C&EC Lab (C1/C2 H.P/P.A)DT-509",
+            "G": "RECESS",
+            "H": "C&EC(P.A)DT-612",
+            "I": "Idea Lab (R.P)(DT-612)"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "V C",
+            "C": "MDM",
+            "D": "RECESS",
+            "E": "C.N(R.W) DT-612",
+            "F": "M.L(A.G)DT-612",
+            "G": "C&EC(P.A)DT-612",
+            "H": "OE-DT-612"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "V C",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-406/DT-612)",
+            "E": "C.N(R.W) DT-612",
+            "F": "RECESS",
+            "G": "C&EC(P.A)DT-612",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "V C",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "CN Lab C1/C2(R.P/N.L) DT405)DT-/C&EC Lab (C3/C4 P.D/P.A)DT-409",
+            "G": "CSE-Honor "
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "24CS03TH0501",
+            "B": "Machine Learning",
+            "E": "Prof. A. Gudadhe "
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab",
+            "E": "Prof. A. Gudadhe (C1, C3)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab",
+            "E": "Dr. P. Dandekar(C2, C4)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "24CS03TH0502",
+            "B": "Cloud & Edge Computing for AI",
+            "E": "Dr. P. Agarkar "
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab",
+            "E": "Prof. H. Patil (C1) Prof. P. Dhule (C3)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab",
+            "E": "Dr. P. Agarkar (C2,C4)"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "24CS03TH0503",
+            "B": "Computer Networks",
+            "E": "Dr. R. Welekar"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab",
+            "E": "Prof. R. Padegaonkar (C1,C3)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab",
+            "E": "Prof. N. Lanke (C2, C4)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab",
+            "E": "Prof. A. Lokhade(C1)Prof. S. Meshram (C3)"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab",
+            "E": "Karthikeyan V.  (C2,C4)"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "24CS03PR0505",
+            "B": "Idea Lab",
+            "E": "Prof. R. Padegaonkar"
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Programming for Data\nScience and AI(D. Junghare)"
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Image Processing  Generative\nModels( Sonam Meshram)"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "A": "24CSOEC01TH050",
+            "B": "Open elective-III",
+            "E": "P. Dhule"
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "A": "24CS03TH0507",
+            "B": "MDM-II"
+          }
+        }
+      ]
+    },
+    "AIML-VIIA": {
+      "max_row": 228,
+      "max_column": 25,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "VII  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: VII A",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "VII A",
+            "D": "Mentor/Mentee",
+            "E": "DL-II (N.G)DT-403",
+            "F": "CC (Y.T)DT-403",
+            "G": "RECESS",
+            "H": "DL-II Lab A1/A2 (N.G/J. N-DT409)/DAV Lab A3/A4 (D.J/S.W DT-405)"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "VII A",
+            "D": "BDA(S.C)DT-403",
+            "E": "CC (Y.T)DT-403",
+            "F": "DL-II (N.G)DT-403",
+            "G": "RECESS",
+            "H": "CC Lab A3/A4 (Y.T/S.T) DT-405/DAV Lab A1/A2 (D.J/S.W DT-409)"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "VII A",
+            "C": "R&IS(S.T) DT-403",
+            "D": "BDA(S.C)DT-403",
+            "E": "RECESS",
+            "F": "DAV( D.J)DT-403",
+            "G": "DL-II (N.G)DT-403",
+            "H": "CC (Y.T)DT-403",
+            "I": "Major Project - I "
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "VII A",
+            "E": "R&IS(S.T) DT-403",
+            "F": "BDA(S.C)DT-403",
+            "G": "RECESS",
+            "H": "CC Lab A1/A2 (Y.T/S.W-DT405)/DL-II Lab A3/A4 (N.G/J. N DT-409)"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "VII A"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "VII A"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "CAT7001",
+            "B": "Deep Learning-II",
+            "E": "Dr. N. Gandhewar"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Dr. N. Gandhewar(A1,A3)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Prof. J. Nanwani (A2,A4)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "CAT7002",
+            "B": "Cloud Computing",
+            "E": "Dr. Y. Thakre"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Y. Thakre (A1,A3)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Sorabh Tiwari(A4) S. Wankhede(A2)"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "CAT7003",
+            "B": "Data Analytics & Visualization",
+            "E": "Prof. D. Junghare "
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. D. Junghare (A1, A3)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. S. Wankhede (A2,A4)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "CAT7004",
+            "B": "Program Elective-4 ( Big Data Analytics)",
+            "E": "Prof. S. Chopde"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "CAT7005",
+            "B": "Robotics and Intelligent Systems",
+            "E": "Dr. Sorabh Tiwari"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "CAP7006",
+            "B": "Major Project-1"
+          }
+        }
+      ]
+    },
+    "AIML-VIIB": {
+      "max_row": 227,
+      "max_column": 25,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "VII  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: VII B",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "VII B",
+            "D": "CC Lab B3/B4 (Y.T/S.T) DT-405/DAV Lab B1/B2 (S.W/D.J/ DT-409)",
+            "F": "RECESS",
+            "G": "DL-II (N.G)DT-406",
+            "H": "CC (Y.T)DT-406"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "VII B",
+            "C": "R&IS(S.T) DT-406",
+            "D": "BDA(J. N)DT-406",
+            "E": "RECESS",
+            "F": "CC (Y.T)DT-406",
+            "G": "DL-II (N.G)DT-406"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "VII B",
+            "D": "BDA(J. N)DT-406",
+            "E": "CC Lab B1/B2 (Y.T/S.T-DT405)/DL-II Lab B3/B4 (N.G/J. N DT-409)",
+            "G": "RECESS",
+            "H": "R&IS(S.T) DT-406",
+            "I": "DL-II (N.G)DT-406",
+            "J": "DAV( S.W)DT-406"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "VII B",
+            "C": "DBA(J. N)DT-406",
+            "D": "DL-II Lab B1/B2 (N.G/S.B-DT409)/DAV Lab B3/B4 (S.W/D.J/ DT-405)",
+            "F": "RECESS",
+            "G": "CC (Y.T)DT-412",
+            "H": "Mentor/Mentee",
+            "I": "Major Project - I"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "VII B"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "VII B"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "CAT7001",
+            "B": "Deep Learning-II",
+            "E": "Dr. N. Gandhewar"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Dr. N. Gandhewar(B1,B3)"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Dr. S.Bondre (B2)Prof. J. Nanwani (B4)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "CAT7002",
+            "B": "Cloud Computing",
+            "E": "Dr. Y. Thakre"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Y. Thakre (B1,B3)"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Sorabh Tiwari(B2,B4)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "CAT7003",
+            "B": "Data Analytics & Visualization",
+            "E": "Prof. S. Wankhede "
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. S. Wankhede (B1,B3)"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "D. Junghare V.(B2,B4)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "CAT7004",
+            "B": "Program Elective-4 ( Big Data Analytics)",
+            "E": " Prof. J. Nanwani"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "CAT7005",
+            "B": "Robotics and Intelligent Systems",
+            "E": "Dr. Sorabh Tiwari"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "CAP7006",
+            "B": "Major Project-1"
+          }
+        }
+      ]
+    },
+    "AIML-VIIC": {
+      "max_row": 228,
+      "max_column": 25,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "VII  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 20-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: VII C",
+            "E": "Session: 2026-27",
+            "J": "Date: 15-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "B": "VII C"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "VII C",
+            "E": "CC Lab C3/C4 (S.W/S.T) DT-405/DAV Lab C1/C2 (A.L/D.J)DT-409",
+            "G": "RECESS",
+            "H": "DL-II (S.B)DT-403",
+            "I": "BDA(J. N)DT-403",
+            "J": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "VII C",
+            "E": "CC (S.W)DT-406",
+            "F": "RECESS",
+            "G": "DL-II (S.B)DT-406",
+            "H": "DL-II Lab C1/C2 (S.B/J. N-DT409)/DAV Lab C3/C4 (A.L/D.J DT-405)",
+            "J": "DL-II (S.B)DT-403"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "VII C",
+            "D": "BDA(J. N)DT-406",
+            "E": "RECESS",
+            "F": "R&IS(S.T) DT-406",
+            "G": "CC (S.W)DT-406",
+            "H": "R&IS(S.T) DT-406",
+            "I": "Major Project - I DT-609"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "VII C",
+            "D": "CC Lab C1/C2 (P.D/S.T-DT411)/DL-II Lab C3/C4 (S.B/J. N DT-609)",
+            "F": "RECESS",
+            "G": "CC (S.W)DT-406",
+            "H": "DAV(S.M)DT-406",
+            "I": "BDA(J. N)DT-406"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "VII C"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "CAT7001",
+            "B": "Deep Learning-II",
+            "E": "Dr. S.Bondre"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Dr. S.Bondre ( C1,C3)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": " Prof.J. Nanwani (C2,C4)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "CAT7002",
+            "B": "Cloud Computing",
+            "E": "Prof. S. Wankhede"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Prof. P.Dhule (C1)Prof. S. Wankhede (C3)"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Prof. P. Dhule(C3)Dr. Sorabh Tiwari(C4)"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "CAT7003",
+            "B": "Data Analytics & Visualization",
+            "E": "Prof. S. Meshram"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. A. Lokhande(C1,C3)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "D. Junghare .(C2,C4)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "CAT7004",
+            "B": "Program Elective-4 ( Big Data Analytics)",
+            "E": "Prof. J. Nanwani"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "CAT7005",
+            "B": "Robotics and Intelligent Systems",
+            "E": "Dr. Sorabh Tiwari"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "CAP7006",
+            "B": "Major Project-1"
+          }
+        }
+      ]
+    },
+    "Updated-load": {
+      "max_row": 302,
+      "max_column": 26,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "C": "Shri Ramdeobaba College of Engineering and Management, Nagpur -440013",
+            "G": "Iss. No.: 01, \n  Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 4.4",
+            "G": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Artificial Intelligiance and Machine Learning",
+            "C": "Load Allotment to Faculties",
+            "G": "Page: __/03"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "C": "Semester:  V, VII"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Programme: Btech",
+            "C": "Session: 2026-27 ( OddSemester)",
+            "G": "Date: 17/06/2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Sr No",
+            "B": "Name of Course Co-ordinator",
+            "C": "Semester, Programme, (Division)",
+            "D": "Semester",
+            "E": "Section",
+            "F": "Course",
+            "G": "Hours",
+            "H": "Total Load"
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": 1.0,
+            "B": "Dr. Suresh Balpande",
+            "C": "CSE",
+            "D": "5th",
+            "E": "A,B,",
+            "F": "Computer Networks ",
+            "G": 6.0,
+            "H": 12
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "C": "CSE",
+            "D": "5th",
+            "E": "A",
+            "F": "Computer Networks Lab ",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": 2.0,
+            "B": "Dr. Rashmi Welekar",
+            "C": "AIML",
+            "D": "5th",
+            "E": "B",
+            "F": "Computer Networks ",
+            "G": 3.0,
+            "H": 12
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "C",
+            "F": "Computer Networks ",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "Network Security Administration Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": 3.0,
+            "B": "Prof. Pranali Dandekar",
+            "C": "CSE",
+            "D": "III",
+            "F": "Design and Analysis of Algorithm",
+            "G": 3.0,
+            "H": 12
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "C": "CSE",
+            "D": "III",
+            "F": "Design and Analysis of Algorithm",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "C",
+            "F": "Machine Learning Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": 4.0,
+            "B": "Dr. Charanjeet Dadiyala",
+            "C": "CYBER",
+            "D": 7.0,
+            "E": "C",
+            "F": "COMPILER DESIGN",
+            "G": 3.0,
+            "H": 14
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "C": "CYBER",
+            "D": 7.0,
+            "E": "C",
+            "F": "DATA VISUALIZATION TECHNIQUES",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "C": "CSE",
+            "F": "THOERY OF COMPUTATION",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "C": "AIML",
+            "D": 5.0,
+            "F": "Idea Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": 5.0,
+            "B": "Dr. Nisarg Gandhewar",
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Deep Learning-II ",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "B",
+            "F": "Deep Learning-II ",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Deep Learning-II Lab",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": 6.0,
+            "B": "Dr. A. Pimpalkar",
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": "Machine Learning",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "B",
+            "F": "Machine Learning",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Machine Learning Lab",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "A": 7.0,
+            "B": "Dr. S. Bondre",
+            "C": "AIML",
+            "D": "7th",
+            "E": "B",
+            "F": "Deep Learning-II ",
+            "G": 3.0,
+            "H": 11
+          }
+        },
+        {
+          "row": 33,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "B",
+            "F": "Deep Learning-II Lab",
+            "G": 6.0
+          }
+        },
+        {
+          "row": 34,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 35,
+          "cells": {
+            "A": 8.0,
+            "B": "Dr. Y. Thakre",
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Cloud Computing",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 36,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "B",
+            "F": "Cloud Computing",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 37,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Cloud Computing Lab",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 38,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 39,
+          "cells": {
+            "A": 9.0,
+            "B": "Ms. Harshita patil",
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": " Cloud & Edge Computing for AI ",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 40,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "B",
+            "F": " Cloud & Edge Computing for AI ",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 41,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": " Cloud & Edge Computing for AI ",
+            "G": 10.0
+          }
+        },
+        {
+          "row": 42,
+          "cells": {
+            "A": 10.0,
+            "B": "Ms. Sonam Meshram",
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A,B,C",
+            "F": "Image Processing  Generative\nModels",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 43,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "B",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 10.0
+          }
+        },
+        {
+          "row": 44,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "C",
+            "F": "Data Analytics & Visualization ",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 45,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Idea Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 46,
+          "cells": {
+            "A": 11.0,
+            "B": "Ms. Dhanashree Junghare",
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A,B,C",
+            "F": "Programming for Data\nScience and AI",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 47,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Data Analytics & Visualization ",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 48,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A,B,C",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 12.0
+          }
+        },
+        {
+          "row": 49,
+          "cells": {
+            "A": 12.0,
+            "B": "Mr Sourabh Tiwari",
+            "C": "AIML",
+            "D": "7th ",
+            "E": "A",
+            "F": "Robotics and Intelligent",
+            "G": 2.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 50,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "B",
+            "F": "Robotics and Intelligent",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 51,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "C",
+            "F": "Robotics and Intelligent",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 52,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Cloud Computing Lab",
+            "G": 10.0
+          }
+        },
+        {
+          "row": 53,
+          "cells": {
+            "A": 13.0,
+            "B": "Ms. Ankita Jaiswal",
+            "C": "CYBER",
+            "D": 5.0,
+            "E": "C",
+            "F": "Software Engineering and Project Mangmnt",
+            "G": 3.0,
+            "H": 14
+          }
+        },
+        {
+          "row": 54,
+          "cells": {
+            "C": "CYBER",
+            "D": 5.0,
+            "E": "C",
+            "F": "Software Engg and Project Mangmnt Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 55,
+          "cells": {
+            "C": "CYBER",
+            "D": 7.0,
+            "E": "C",
+            "F": "DEF Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 56,
+          "cells": {
+            "C": "CYBER",
+            "D": 7.0,
+            "E": "C",
+            "F": "Secure Coding",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 57,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 58,
+          "cells": {
+            "A": 14.0,
+            "B": "Ms. Monika Bagade",
+            "C": "Cyber",
+            "D": "5th",
+            "E": "D1",
+            "F": "Computer Security",
+            "G": 3.0,
+            "H": 3
+          }
+        },
+        {
+          "row": 63,
+          "cells": {
+            "A": 15.0,
+            "B": "Ms. Sujata Wankhede (PG-WCC)",
+            "C": "AIML",
+            "D": "7th",
+            "E": "C",
+            "F": "Cloud Computing",
+            "G": 3.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 64,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Cloud Computing Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 65,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Data Analytics & Visualization ",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 66,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 67,
+          "cells": {
+            "A": 16.0,
+            "B": "Ms. Ashwini Lokhande (PG-MT)",
+            "C": "AIML",
+            "D": "5th",
+            "E": "B",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 4.0,
+            "H": 11.0
+          }
+        },
+        {
+          "row": 68,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "B",
+            "F": "Idea Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 69,
+          "cells": {
+            "C": "AIML",
+            "D": "7th ",
+            "E": "C",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 70,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Open Elective -III",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 71,
+          "cells": {
+            "A": 17.0,
+            "B": "Dr. Poonam Agarkar (ETRX)",
+            "C": "AIML",
+            "D": "5th ",
+            "E": "C",
+            "F": "Cloud & Edge Computing for AI ",
+            "G": 3.0,
+            "H": 15.0
+          }
+        },
+        {
+          "row": 72,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Cloud & Edge Computing for AI ",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 73,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "B",
+            "F": "Computer Networks Lab ",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 75,
+          "cells": {
+            "A": 18.0,
+            "B": "Ms. Rasika Padegaonkar (VLSI)",
+            "C": "AIML",
+            "D": "5th",
+            "E": "C",
+            "F": "Computer Networks Lab ",
+            "G": 8.0,
+            "H": 15
+          }
+        },
+        {
+          "row": 76,
+          "cells": {
+            "C": "Cyber",
+            "D": "5th",
+            "E": "A",
+            "F": "AIML",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 77,
+          "cells": {
+            "C": "Cyber",
+            "D": "5th",
+            "E": "A",
+            "F": "AIML Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 78,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "C",
+            "F": "Idea Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 79,
+          "cells": {
+            "A": 19.0,
+            "B": "Mr. Dev Mukherjee (MS-1 yr)",
+            "C": "CYBER",
+            "D": "5th",
+            "E": "C",
+            "F": "Idea Lab",
+            "G": 2.0,
+            "H": 14
+          }
+        },
+        {
+          "row": 80,
+          "cells": {
+            "C": "CYBER",
+            "D": "5th",
+            "E": "C",
+            "F": "Prog.Elec-I: IHR",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 81,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "Network Security Administration Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 82,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "Network Security Administration",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 83,
+          "cells": {
+            "C": "Cyber",
+            "D": "7th",
+            "E": "C",
+            "F": "Project Phase – I",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 84,
+          "cells": {
+            "A": 20.0,
+            "B": "Mr. Abhinay Gudadhe (EE)",
+            "C": "AIML",
+            "D": "5th",
+            "E": "C",
+            "F": "Machine Learning",
+            "G": 3.0,
+            "H": 15.0
+          }
+        },
+        {
+          "row": 85,
+          "cells": {
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Machine Learning Lab",
+            "G": 12.0
+          }
+        },
+        {
+          "row": 86,
+          "cells": {
+            "A": 21.0,
+            "B": "Prof. N. Lanke",
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": "Computer Networks ",
+            "G": 3.0,
+            "H": 15.0
+          }
+        },
+        {
+          "row": 87,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": "Computer Networks Lab ",
+            "G": 8.0
+          }
+        },
+        {
+          "row": 88,
+          "cells": {
+            "C": "CYBER",
+            "D": 7.0,
+            "E": "C",
+            "F": "DATA VISUALIZATION TECHNIQUES",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 89,
+          "cells": {
+            "A": 22.0,
+            "B": "Piyush Dhule",
+            "C": "AIML",
+            "D": "5th ",
+            "E": "A",
+            "F": "Cloud & Edge Computing for AI Lab",
+            "G": 10.0,
+            "H": 16.0
+          }
+        },
+        {
+          "row": 90,
+          "cells": {
+            "C": "CSE",
+            "D": "5th",
+            "E": "A",
+            "F": "Machine Learning",
+            "G": 3.0
+          }
+        },
+        {
+          "row": 91,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Cloud Computing Lab",
+            "G": 2.0
+          }
+        },
+        {
+          "row": 92,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "B",
+            "F": "Open Elective -III",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 93,
+          "cells": {
+            "A": 23.0,
+            "B": "Kartekiyan V.",
+            "C": "AIML",
+            "D": "5th",
+            "E": "A,B,C",
+            "F": "Data Analytics & Visualization  Lab",
+            "G": 10.0,
+            "H": 11.0
+          }
+        },
+        {
+          "row": 94,
+          "cells": {
+            "C": "AIML",
+            "D": "5th",
+            "E": "A",
+            "F": "Open Elective -III",
+            "G": 1.0
+          }
+        },
+        {
+          "row": 95,
+          "cells": {
+            "A": 24.0,
+            "B": "Prof. Jaya Nanwani ",
+            "C": "AIML",
+            "D": "7th",
+            "E": "A,B",
+            "F": "Big Data Analytics ",
+            "G": 6.0,
+            "H": 16
+          }
+        },
+        {
+          "row": 96,
+          "cells": {
+            "C": "AIML",
+            "D": "7th",
+            "E": "A",
+            "F": "Deep Learning-II Lab",
+            "G": 10.0
+          }
+        },
+        {
+          "row": 98,
+          "cells": {
+            "A": "Load given to other faculties"
+          }
+        },
+        {
+          "row": 99,
+          "cells": {
+            "A": 1.0,
+            "B": "Mr. Kaushik Roy",
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "DEF ",
+            "G": 3.0,
+            "H": 7
+          }
+        },
+        {
+          "row": 100,
+          "cells": {
+            "C": "CYBER",
+            "D": "7th",
+            "E": "C",
+            "F": "DEF Lab",
+            "G": 4.0
+          }
+        },
+        {
+          "row": 101,
+          "cells": {
+            "A": 2.0,
+            "B": "Ms. Samiha Khan",
+            "C": "CYBER",
+            "D": "5th",
+            "E": "C",
+            "F": "Basics of Ethical Hacking",
+            "G": 3.0,
+            "H": 3
+          }
+        },
+        {
+          "row": 102,
+          "cells": {
+            "A": 3.0,
+            "B": "Sonam Chopde",
+            "C": "AICS",
+            "D": "7th",
+            "E": "A",
+            "F": "Big Data Analytics",
+            "G": 3.0,
+            "H": 3.0
+          }
+        }
+      ]
+    },
+    "Master=TT": {
+      "max_row": 38,
+      "max_column": 26,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEMESTER",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "TIME \nDAY",
+            "B": "Time",
+            "C": "9:00 - 10:00",
+            "D": "10:00 - 11:00",
+            "E": "11:00 - 12:00",
+            "F": "12:00 - 1:00",
+            "G": "1:00 - 2:00",
+            "H": "2:00 - 3:00",
+            "I": "3:00 - 4:00",
+            "J": "4:00 - 5:00"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "MONDAY",
+            "B": "V A",
+            "D": "OE-DT-406",
+            "E": "M.L(A.P)DT-406",
+            "F": "RECESS",
+            "G": "C.N(N.L) DT-612",
+            "H": "CN Lab A1/A2(N.L/P.A) DT609)DT-/C&EC Lab (A3/A4 H.P/P.D)DT-509"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "B": "V B",
+            "D": "CN Lab B1/B2(P.A/R.P) DT609)/DAV Lab B3/B4(A.L/S.M)-DT-509",
+            "F": "C&EC(H.P)DT-612",
+            "G": "RECESS",
+            "H": "C.N(R.W) DT-612",
+            "I": "M.L(A.P)DT-612"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "B": "V C",
+            "D": "M.L(A.G)DT-612",
+            "E": "RECESS",
+            "F": "ML ( C3/C4(A.G/P.Da)-DT-509)/DAV Lab C1/C2(A.L/K.V)-DT-609",
+            "H": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "B": "VII A",
+            "D": "Mentor/Mentee",
+            "E": "DL-II (N.G)DT-403",
+            "F": "CC (Y.T)DT-403",
+            "G": "RECESS",
+            "H": "DL-II Lab A1/A2 (N.G/J. N-DT409)/DAV Lab A3/A4 (D.J/S.W DT-405)"
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "B": "VII B",
+            "D": "CC Lab B3/B4 (Y.T/S.T) DT-405/DAV Lab B1/B2 (S.W/D.J/ DT-409)",
+            "F": "RECESS",
+            "G": "DL-II (N.G)DT-406",
+            "H": "CC (Y.T)DT-406"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "B": "VII C"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "B": "V A",
+            "D": "CN Lab A3/A4(N.L/P.A) DT609)DT-/C&EC Lab (A1/A2 H.P/P.D)DT-509",
+            "F": "RECESS",
+            "G": "M.L(A.P)DT-403",
+            "H": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "B": "V B",
+            "D": "OE(DT-612)",
+            "E": "M.L(A.P)DT-612",
+            "F": "RECESS",
+            "G": "C.N(R.W) DT-612",
+            "H": "CN Lab B3/B4(P.A/R.P) DT609)DT-/C&EC Lab (B1/B2 H.P/P.D)DT-509"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "B": "V C",
+            "C": "M.L(A.G)DT-403",
+            "D": "RECESS",
+            "E": "C.N(R.W) DT-406",
+            "F": "ML ( C1/C2(A.G/P.Da)-DT-509)/DAV Lab C3/C4(S.M/K.V)-DT-609"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "B": "VII A",
+            "D": "BDA(S.C)DT-403",
+            "E": "CC (Y.T)DT-403",
+            "F": "DL-II (N.G)DT-403",
+            "G": "RECESS",
+            "H": "CC Lab A3/A4 (Y.T/S.T) DT-405/DAV Lab A1/A2 (D.J/S.W DT-409)"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "B": "VII B",
+            "C": "R&IS(S.T) DT-406",
+            "D": "BDA(J. N)DT-406",
+            "E": "RECESS",
+            "F": "CC (Y.T)DT-406",
+            "G": "DL-II (N.G)DT-406",
+            "H": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "B": "VII C",
+            "E": "CC Lab C3/C4 (S.W/S.T) DT-405/DAV Lab C1/C2 (A.L/D.J)DT-409",
+            "G": "RECESS",
+            "H": "DL-II (S.B)DT-403",
+            "I": "BDA(J. N)DT-403",
+            "J": "Mentor/Mentee"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "WEDNESDAY",
+            "B": "V A",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "M.L(A.P) DT-612",
+            "F": "RECESS",
+            "G": "C&EC(H.P)DT-609",
+            "H": "ML ( A1/A2( A.P/ A.G)-DT-509)/DAV Lab A3/A4(K.V/S.M)-DT-609"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "B": "V B",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "RECESS",
+            "F": "Mentor/Mentee",
+            "G": "M.L(A.P)DT-612",
+            "H": "C&EC(H.P)DT-412"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "B": "V C",
+            "D": "PDA(D.J)/IP(S.M)(DT-609/DT-612)",
+            "E": "CN Lab C3/C4(R.P/N.L) DT609)DT-/C&EC Lab (C1/C2 H.P/P.A)DT-509",
+            "G": "RECESS",
+            "H": "C&EC(P.A)DT-612",
+            "I": "Idea Lab (R.P)(DT-612)"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "B": "VII A",
+            "C": "R&IS(S.T) DT-403",
+            "D": "BDA(S.C)DT-403",
+            "E": "RECESS",
+            "F": "DAV( D.J)DT-403",
+            "G": "DL-II (N.G)DT-403",
+            "H": "CC (Y.T)DT-403",
+            "I": "Major Project - I "
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "B": "VII B",
+            "D": "BDA(J. N)DT-406",
+            "E": "CC Lab B1/B2 (Y.T/S.T-DT405)/DL-II Lab B3/B4 (N.G/J. N DT-409)",
+            "G": "RECESS",
+            "H": "R&IS(S.T) DT-406",
+            "I": "DL-II (N.G)DT-406",
+            "J": "DAV( S.W)DT-406"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "B": "VII C",
+            "E": "CC (S.W)DT-406",
+            "F": "RECESS",
+            "G": "DL-II (S.B)DT-406",
+            "H": "DL-II Lab C1/C2 (S.B/J. N-DT409)/DAV Lab C3/C4 (A.L/D.J DT-405)",
+            "J": "DL-II (S.B)DT-403"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "THURSDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "C.N(N.L)DT-612",
+            "E": "RECESS",
+            "F": "C&EC(H.P)DT-609",
+            "G": "ML ( A3/A4( A.P/ A.G)-DT-509)/DAV Lab A1/A2(K.V/S.M)-DT-609"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "B": "V B",
+            "C": "MDM",
+            "D": "ML ( B1/B2( A.P/ A.G)-DT-509)/C&EC Lab (B3/B4 H.P/P.D)DT-609",
+            "F": "C.N(R.W) DT-509",
+            "G": "RECESS",
+            "H": "C&EC(H.P)DT-403"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "B": "V C",
+            "C": "MDM",
+            "D": "RECESS",
+            "E": "C.N(R.W) DT-612",
+            "F": "M.L(A.G)DT-612",
+            "G": "C&EC(P.A)DT-612",
+            "H": "OE-DT-612"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "B": "VII A",
+            "E": "R&IS(S.T) DT-403",
+            "F": "BDA(S.C)DT-403",
+            "G": "RECESS",
+            "H": "CC Lab A1/A2 (Y.T/S.W-DT405)/DL-II Lab A3/A4 (N.G/J. N DT-409)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "B": "VII B",
+            "C": "DBA(J. N)DT-406",
+            "D": "DL-II Lab B1/B2 (N.G/S.B-DT409)/DAV Lab B3/B4 (S.W/D.J/ DT-405)",
+            "F": "RECESS",
+            "G": "CC (Y.T)DT-412",
+            "H": "Mentor/Mentee",
+            "I": "Major Project - I"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "B": "VII C",
+            "D": "BDA(J. N)DT-406",
+            "E": "RECESS",
+            "F": "R&IS(S.T) DT-406",
+            "G": "CC (S.W)DT-406",
+            "H": "R&IS(S.T) DT-406",
+            "I": "Major Project - I DT-609"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "FRIDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT406/DT-612)",
+            "E": "C&EC(H.P)DT-403",
+            "F": "C.N(N.L) DT-403",
+            "G": "RECESS",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "B": "V B",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT406/DT-612)",
+            "E": "RECESS",
+            "F": "ML ( B3/B4( A.P/ A.G)-DT-509)/DAV Lab B1/B2(K.V/S.M)-DT-609",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "B": "V C",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT406/DT-612)",
+            "E": "C.N(R.W) DT-612",
+            "F": "RECESS",
+            "G": "C&EC(P.A)DT-612",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "B": "VII A"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "B": "VII B"
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "B": "VII C",
+            "D": "CC Lab C1/C2 (P.D/S.T-DT411)/DL-II Lab C3/C4 (S.B/J. N DT-609)",
+            "F": "RECESS",
+            "G": "CC (S.W)DT-406",
+            "H": "DAV(S.M)DT-406",
+            "I": "BDA(J. N)DT-406"
+          }
+        },
+        {
+          "row": 33,
+          "cells": {
+            "A": "SATURDAY",
+            "B": "V A",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "RECESS",
+            "F": "Idea Lab (S.M)(DT-403)",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 34,
+          "cells": {
+            "B": "V B",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "RECESS",
+            "F": "Idea Lab (A.L)(DT-406)",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 35,
+          "cells": {
+            "B": "V C",
+            "C": "MDM",
+            "D": "PDA(D.J)/IP(S.M)(DT-409/DT-612)",
+            "E": "CN Lab C1/C2(R.P/N.L) DT609)DT-/C&EC Lab (C3/C4 P.D/P.A)DT-509",
+            "G": "RECESS",
+            "H": "CSE-Honor "
+          }
+        },
+        {
+          "row": 36,
+          "cells": {
+            "B": "VII A"
+          }
+        },
+        {
+          "row": 37,
+          "cells": {
+            "B": "VII B"
+          }
+        },
+        {
+          "row": 38,
+          "cells": {
+            "B": "VII C"
+          }
+        }
+      ]
+    },
+    "Classwise Load": {
+      "max_row": 38,
+      "max_column": 12,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "Classwise Load"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "V Semester"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "E": "V A",
+            "G": "V B",
+            "J": "V C"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "24CS03TH0501",
+            "B": "Machine Learning (ML)",
+            "E": "Dr. A. Pimpalkar",
+            "G": "Dr. A. Pimpalkar",
+            "J": "Prof. A. Gudadhe "
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "Dr. A. Pimpalkar (A1, A3))",
+            "G": "Dr. A. Pimpalkar (B1, B3)",
+            "J": "Prof. A. Gudadhe (C1, C3)"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "24CS03PR0501",
+            "B": "Machine Learning Lab (ML Lab)",
+            "E": "Prof. A. Gudadhe (A2, A4)",
+            "G": "A. Gudadhe( B2,B4)",
+            "J": "Dr. P. Dandekar(C2, C4)"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "24CS03TH0502",
+            "B": "Cloud & Edge Computing for AI ( C&EC)",
+            "E": "Prof. H. Patil",
+            "G": "Prof. H. Patil",
+            "J": "Dr. P. Agarkar "
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Prof. H. Patil (A1, A3)",
+            "G": "Prof. H. Patil (B1, B3)",
+            "J": "Prof. H. Patil (C1) Prof. P. Dhule (C3)"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "24CS03PR0502",
+            "B": "Cloud & Edge Computing for AI Lab (C&EC Lab))",
+            "E": "Prof. P. Dhule(A2,A4)",
+            "G": "Dr. P. Dhule(B2,B4)",
+            "J": "Dr. P. Agarkar (C2,C4)"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "24CS03TH0503",
+            "B": "Computer Networks (CN)",
+            "E": "Prof. N. Lanke ",
+            "G": "Dr. R. Welekar",
+            "J": "Dr. R. Welekar"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Prof. N. Lanke (A1, A3)",
+            "G": "Dr. P. Agarkar (B1,B3)",
+            "J": "Prof. R. Padegaonkar (C1,C3)"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "24CS03PR0503",
+            "B": "Computer Networks Lab (CN LAb)",
+            "E": "Dr. P. Agarkar (A2,A4)",
+            "G": "Prof. R. Padegaonkar (B2,B4)",
+            "J": "Prof. N. Lanke (C2, C4)"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. Karthikeyan V. (A1, A3)",
+            "G": "Prof. Karthikeyan V. (B1) Prof. A. Lokhande( B3)",
+            "J": "Prof. A. Lokhade(C1)Prof. S. Meshram (C3)"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "24CS03PR0504 ",
+            "B": "Data Analytics and Visualization Lab (DAV Lab)",
+            "E": "Prof. S. Meshram (A2,A4)",
+            "G": "Prof. S. Meshram(B2,B4)",
+            "J": "Karthikeyan V.  (C2,C4)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "A": "24CS03PR0505",
+            "B": "Idea Lab",
+            "E": "Prof. S. Meshram",
+            "G": "A. Lokhande",
+            "J": "Prof. R. Padegaonkar"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Programming for Data\nScience and AI(D. Junghare)",
+            "G": "Programming for Data\nScience and AI(D. Junghare)",
+            "J": "Programming for Data\nScience and AI(D. Junghare)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "A": "24CS03TH0506",
+            "B": "Program Elective-I",
+            "E": "Image Processing  Generative\nModels( Sonam Meshram)",
+            "G": "Image Processing Generative\nModels( Sonam Meshram)",
+            "J": "Image Processing  Generative\nModels( Sonam Meshram)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "A": "24CSOEC01TH050",
+            "B": "Open elective-III",
+            "E": "Kartekiyan V.",
+            "G": "A. Lokhande",
+            "J": "P. Dhule"
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "A": "24CS03TH0507",
+            "B": "MDM-II"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "A": "VII Semester"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "A": "Course Code",
+            "B": "Course Name",
+            "E": "Course Coordinator(s)"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "E": "VII A",
+            "G": "VII B",
+            "J": "VII C"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "A": "CAT7001",
+            "B": "Deep Learning-II",
+            "E": "Dr. N. Gandhewar",
+            "G": "Dr. N. Gandhewar",
+            "J": "Dr. S.Bondre"
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "Dr. N. Gandhewar(A1,A3)",
+            "G": "Dr. N. Gandhewar(B1,B3)",
+            "J": "Dr. S.Bondre ( C1,C3)"
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "A": "CAP7001",
+            "B": "Deep Learning-II Lab",
+            "E": "J. Nanwani (A2,A4)",
+            "G": "Dr. S.Bondre (B2) J. Nanwani (B4)",
+            "J": " J. Nanwani (C2,C4)"
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "A": "CAT7002",
+            "B": "Cloud Computing",
+            "E": "Dr. Y. Thakre",
+            "G": "Dr. Y. Thakre",
+            "J": "Prof. S. Wankhede"
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Y. Thakre (A1,A3)",
+            "G": "Dr. Y. Thakre (B1,B3)",
+            "J": "Prof. P.Dhule (C1)Prof. S. Wankhede (C3)"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "A": "CAP7002",
+            "B": "Cloud Computing Lab",
+            "E": "Dr. Sorabh Tiwari(A4) S. Wankhede(A2)",
+            "G": "Dr. Sorabh Tiwari(B2,B4)",
+            "J": "Prof. P. Dhule(C3)Dr. Sorabh Tiwari(C4)"
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "A": "CAT7003",
+            "B": "Data Analytics & Visualization",
+            "E": "Prof. D. Junghare ",
+            "G": "Prof. S. Wankhede ",
+            "J": "Prof. S. Meshram"
+          }
+        },
+        {
+          "row": 33,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. D. Junghare (A1, A3)",
+            "G": "Prof. S. Wankhede (B1,B3)",
+            "J": "Prof. A. Lokhande(C1,C3)"
+          }
+        },
+        {
+          "row": 34,
+          "cells": {
+            "A": "CAP7003",
+            "B": "Data Analytics & Visualization Lab",
+            "E": "Prof. S. Wankhede (A2,A4)",
+            "G": "D. Junghare V.(B2,B4)",
+            "J": "D. Junghare .(C2,C4)"
+          }
+        },
+        {
+          "row": 35,
+          "cells": {
+            "A": "CAT7004",
+            "B": "Program Elective-4 ( Big Data Analytics)",
+            "E": "Prof. S. Chopde",
+            "G": "Prof. S. Chopde",
+            "J": "Dr. S. Chopde"
+          }
+        },
+        {
+          "row": 36,
+          "cells": {
+            "A": "CAT7004",
+            "B": "Program Elective-4 (Reinforcement Learning)",
+            "E": "J. Nanwani",
+            "G": " J. Nanwani",
+            "J": "J. Nanwani"
+          }
+        },
+        {
+          "row": 37,
+          "cells": {
+            "A": "CAT7005",
+            "B": "Robotics and Intelligent Systems",
+            "E": "Dr. Sorabh Tiwari",
+            "G": "Dr. Sorabh Tiwari",
+            "J": "Dr. Sorabh Tiwari"
+          }
+        },
+        {
+          "row": 38,
+          "cells": {
+            "A": "CAP7006",
+            "B": "Major Project-1"
+          }
+        }
+      ]
+    },
+    "R.W": {
+      "max_row": 220,
+      "max_column": 16,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "V  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 13-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: Personal TT Dr. R. Welekar ",
+            "E": "Session: 2026-27",
+            "J": "Date: 11-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "F": "C.N(R.W) DT-612(V B)"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "E": "C.N(R.W) DT-406(V C)",
+            "G": "C.N(R.W) DT-612(V B)"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "E": "C.N(R.W) DT-612(V C)",
+            "F": "C.N(R.W) DT-609(V B)"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "F": "C.N(R.W) DT-612(V C)"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        }
+      ]
+    },
+    "N.L": {
+      "max_row": 220,
+      "max_column": 16,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 1,
+          "cells": {
+            "A": "ACAD-25 a)",
+            "E": "Ramdeobaba University, Nagpur-440013",
+            "J": "Iss. No.: 01, Rev. No.: 00"
+          }
+        },
+        {
+          "row": 2,
+          "cells": {
+            "A": "Ref. Clause(s): 7.5.1",
+            "J": "Date of Rev: 01/01/2018"
+          }
+        },
+        {
+          "row": 3,
+          "cells": {
+            "A": "Department: Department of AICS",
+            "E": "V  Sem Timetable\n(Odd Semester)",
+            "J": "W.E.F.: 13-07-2026"
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "A": "Programme: B. Tech. CSE (AIML)",
+            "J": "Page: 01/01"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "A": "Shift/Semester: Personal TT Dr. R. Welekar ",
+            "E": "Session: 2026-27",
+            "J": "Date: 11-07-2026"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "A": "Lecture",
+            "B": "SEM",
+            "C": 1.0,
+            "D": 2.0,
+            "E": 3.0,
+            "F": 4.0,
+            "G": 5.0,
+            "H": 6.0,
+            "I": 7.0,
+            "J": 8.0
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "A": "Day\\Time",
+            "C": "9.00-10.00",
+            "D": "10.00-11.00",
+            "E": "11.00-12.00",
+            "F": "12.00-1.00",
+            "G": "1.00-2.00",
+            "H": "2.00-3.00",
+            "I": "3.00-4.00",
+            "J": "4.00-5.00"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "A": "MONDAY",
+            "G": "C.N(N.L) DT-612 V A",
+            "H": "CN Lab A1/A2(N.L/P.A) DT609)"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "A": "TUESDAY",
+            "D": "CN Lab A3/A4(N.L/P.A) DT609)"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "A": "WEDNESDAY",
+            "E": "CN Lab C3/C4(R.P/N.L) DT609)"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "A": "THURSDAY",
+            "D": "C.N(N.L)DT-612 V A",
+            "F": "DVT -Cyber-C1,C2 DT-409"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "A": "FRIDAY",
+            "D": "DVT -Cyber-C3,C4 DT-409",
+            "G": "C.N(N.L) DT-403 VA",
+            "H": "CN Lab C1/C2(R.P/N.L) DT609)"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "A": "SATURDAY"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "A": "Prof. N. Lanke",
+            "E": "Dr. R. Welekar",
+            "H": "Dr. P. D. Adane"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "A": "Time Table In-Charge,",
+            "E": "Associate Head, CSE",
+            "H": "Dean & Head, CSE"
+          }
+        }
+      ]
+    },
+    "Master TT": {
+      "max_row": 300,
+      "max_column": 26,
+      "representation": "Non-empty cells keyed by Excel column letter; row numbers preserve source positions.",
+      "rows": [
+        {
+          "row": 3,
+          "cells": {
+            "B": "Lecture",
+            "C": "SEMESTER",
+            "D": 1.0,
+            "E": 2.0,
+            "F": 3.0,
+            "G": 4.0,
+            "H": 5.0,
+            "I": 6.0,
+            "J": 7.0,
+            "K": 8.0,
+            "L": 9.0,
+            "M": 10.0
+          }
+        },
+        {
+          "row": 4,
+          "cells": {
+            "B": "TIME \nDAY",
+            "C": "Time",
+            "D": "8:00 - 9:00",
+            "E": "9:00 - 10:00",
+            "F": "10:00 - 11:00 ",
+            "G": "11:00 - 12:00",
+            "H": "12:00 - 1:00",
+            "I": "1:00 - 2:00",
+            "J": "2:00 - 3:00",
+            "K": "3:00 - 4:00",
+            "L": "4:00 - 5:00",
+            "M": "5:00 - 6:00"
+          }
+        },
+        {
+          "row": 5,
+          "cells": {
+            "B": "MONDAY"
+          }
+        },
+        {
+          "row": 6,
+          "cells": {
+            "C": "IV A1",
+            "D": 103.0,
+            "E": "MDM-II",
+            "F": "AI-DT-212",
+            "G": "CD-DT-212",
+            "H": "RECESS",
+            "I": "DBMS-DT-206",
+            "J": "AI Lab- DT-105 (B1 & B2) / DBMS lab-DT-111 (B3 & B4)"
+          }
+        },
+        {
+          "row": 7,
+          "cells": {
+            "C": "IV A2",
+            "D": 106.0,
+            "E": "MDM-II",
+            "F": "AI Lab- DT-105 (B1 & B2) / DBMS lab-DT-111 (B3 & B4)",
+            "H": "RECESS",
+            "I": "DBMS-DT-212",
+            "J": "CD-DT-212",
+            "K": "CIDT-DT-212"
+          }
+        },
+        {
+          "row": 8,
+          "cells": {
+            "C": "IV A3",
+            "D": 112.0,
+            "E": "MDM-II",
+            "F": "DBMS lab-DT-211 (B3 & B4)/AI lab-DT-109 (B1 & B2)",
+            "H": "RECESS",
+            "I": "AI-DT-103",
+            "J": "CD-DT-103"
+          }
+        },
+        {
+          "row": 9,
+          "cells": {
+            "C": "IV A4",
+            "D": 203.0,
+            "E": "MDM-II",
+            "F": "CIDT-DT-103",
+            "G": "CD-DT-103",
+            "H": "RECESS",
+            "I": "DBMS-DT-203",
+            "J": "AI Lab- DT-205 (B1 & B2) / SL-II lab-DT-211 (B3 & B4)"
+          }
+        },
+        {
+          "row": 10,
+          "cells": {
+            "C": "IV A5",
+            "D": 206.0,
+            "E": "MDM-II",
+            "F": " DBMS lab-DT-209 (B3 & B4)/AI Lab- DT-205 (B1 & B2) ",
+            "H": "RECESS",
+            "I": "AI-DT-106",
+            "J": "CIDT-DT-106"
+          }
+        },
+        {
+          "row": 11,
+          "cells": {
+            "C": "IV A6",
+            "E": "MDM-II",
+            "F": "Mentor/Mentee Bi-Weekly",
+            "G": "DBMS-DT-112",
+            "H": "RECESS",
+            "I": "CD-DT-112",
+            "J": "AI Lab- DT-109 (B1 & B2) / DBMS lab-DT-209 (B3 & B4)"
+          }
+        },
+        {
+          "row": 12,
+          "cells": {
+            "C": "IV A7",
+            "E": "MDM-II",
+            "F": "CD-DT-203",
+            "G": "RECESS",
+            "H": "AI Lab- DT-105 (B1 & B2) / DBMS lab-DT-111 (B3 & B4)"
+          }
+        },
+        {
+          "row": 13,
+          "cells": {
+            "C": "IV A8",
+            "E": "MDM-II",
+            "F": "AI-DT-112",
+            "G": "RECESS",
+            "H": "AI Lab- DT-109 (B1 & B2) / DBMS lab-DT-209 (B3 & B4)",
+            "J": "CIDT-DT-112"
+          }
+        },
+        {
+          "row": 14,
+          "cells": {
+            "C": "IV A9",
+            "E": "MDM-II",
+            "F": "Mentor/Mentee Bi-Weekly",
+            "G": "CIDT-DT-203",
+            "H": "AI Lab- DT-205 (B1 & B2) / SL-II lab-DT-211 (B3 & B4)",
+            "J": "RECESS",
+            "K": "CD-DT-103"
+          }
+        },
+        {
+          "row": 15,
+          "cells": {
+            "C": "VI A",
+            "F": "ML LAB (A1,A2) (SJ/LR) (DT-805)/CN LAB (DN/BD)(A3,A4) (DT-811)",
+            "H": "DWM (DT-203)",
+            "I": "RECESS",
+            "J": "ML (DT-203)",
+            "K": "BDA (DT-203)",
+            "L": "CRM (DT-203)"
+          }
+        },
+        {
+          "row": 16,
+          "cells": {
+            "C": "VI B",
+            "F": "DWM (DT-206)",
+            "G": "BDA (DT-206)",
+            "H": "ML (DT-206)",
+            "I": "RECESS",
+            "J": "DP (DT-206)",
+            "K": "ML LAB (B1,B2) (LR/SG) (DT-805)/CN LAB (B3,B4) (DN/SK)(DT-811)"
+          }
+        },
+        {
+          "row": 17,
+          "cells": {
+            "C": "VI C",
+            "F": "CN (DT-803)",
+            "G": "DWM (DT-803)",
+            "H": "CRM (DT-803)",
+            "I": "RECESS",
+            "J": "BDA (DT-803)",
+            "K": "DP (DT-803)"
+          }
+        },
+        {
+          "row": 18,
+          "cells": {
+            "C": "VIII A",
+            "H": "PROJECT (DT-805)"
+          }
+        },
+        {
+          "row": 19,
+          "cells": {
+            "C": "VIII B",
+            "H": "PROJECT (DT-811)"
+          }
+        },
+        {
+          "row": 20,
+          "cells": {
+            "B": "TUESDAY",
+            "C": "IV A1",
+            "E": "MDM-II",
+            "F": "OE-DT-212",
+            "G": "CD-DT-212",
+            "H": "RECESS",
+            "I": "DBMS-DT-206",
+            "J": "SL-II Lab- DT-105 (B1 & B2) "
+          }
+        },
+        {
+          "row": 21,
+          "cells": {
+            "C": "IV A2",
+            "E": "MDM-II",
+            "F": "SL-II Lab- DT-105 (B1 & B2) /AI Lab- DT-111 (B3 & B4)",
+            "H": "RECESS",
+            "I": "AI-DT-212",
+            "J": "CD-DT-212"
+          }
+        },
+        {
+          "row": 22,
+          "cells": {
+            "C": "IV A3",
+            "E": "MDM-II",
+            "F": "SL-II Lab- DT-205 (B1 & B2)/AI Lab- DT-211 (B3 & B4)",
+            "H": "RECESS",
+            "I": "AI-DT-103",
+            "J": "DBMS-DT-103",
+            "K": "CIDT-DT-103"
+          }
+        },
+        {
+          "row": 23,
+          "cells": {
+            "C": "IV A4",
+            "E": "MDM-II",
+            "F": "Mentor/Mentee Bi-Weekly",
+            "G": "AI-DT-103",
+            "H": "DBMS-DT-103",
+            "I": "RECESS"
+          }
+        },
+        {
+          "row": 24,
+          "cells": {
+            "C": "IV A5",
+            "E": "MDM-II",
+            "F": "SL-II Lab- DT-109 (B1 & B2) /AI Lab- DT-209 (B3 & B4)        ",
+            "H": "RECESS",
+            "I": "AI-DT-106",
+            "J": "DBMS-DT-106"
+          }
+        },
+        {
+          "row": 25,
+          "cells": {
+            "C": "IV A6",
+            "E": "MDM-II",
+            "F": "CIDT-DT-106",
+            "G": "CD-DT-106",
+            "H": "RECESS",
+            "I": "DBMS-DT-112",
+            "J": " DBMS lab-DT-109 (B1 & B2)"
+          }
+        },
+        {
+          "row": 26,
+          "cells": {
+            "C": "IV A7",
+            "E": "MDM-II",
+            "F": "OE-DT-112",
+            "G": "AI-DT-112",
+            "H": "RECESS",
+            "I": "CD-DT-203",
+            "J": "SL-II Lab- DT-109 (B1 & B2) "
+          }
+        },
+        {
+          "row": 27,
+          "cells": {
+            "C": "IV A8",
+            "E": "MDM-II",
+            "F": "AI-DT-103",
+            "G": "RECESS",
+            "H": "SL-II Lab- DT-205 (B1 & B2) "
+          }
+        },
+        {
+          "row": 28,
+          "cells": {
+            "C": "IV A9",
+            "E": "MDM-II",
+            "F": "AI-DT-203",
+            "G": "RECESS",
+            "H": "DBMS Lab- DT-109 (B3 & B4) "
+          }
+        },
+        {
+          "row": 29,
+          "cells": {
+            "C": "VI A",
+            "F": "ML LAB (A3,A4) (DT-805) (SJ/SG)/BDA LAB (A1,A2) (AS/SS)(DT-811)",
+            "H": "DWM (DT-203)",
+            "I": "RECESS",
+            "J": "DP (DT-203)",
+            "K": "BDA (DT-203)"
+          }
+        },
+        {
+          "row": 30,
+          "cells": {
+            "C": "VI B",
+            "F": "DWM (DT-206)",
+            "G": "DP (DT-206)",
+            "H": "ML (DT-206)",
+            "I": "RECESS",
+            "J": "CRM (DT-206)",
+            "K": "ML LAB (B3,B4) (LR/SG) (DT-805)/CN LAB (B1,B2) (DN/SK)(DT-811)"
+          }
+        },
+        {
+          "row": 31,
+          "cells": {
+            "C": "VI C",
+            "F": "BDA (DT-803)",
+            "G": "DWM (DT-803)",
+            "H": "BDA LAB (C3,C4) (DT-805) (KK)/CN LAB (C1,C2) (BD/SK) (DT-811)",
+            "J": "RECESS",
+            "K": "ML (DT-206)"
+          }
+        },
+        {
+          "row": 32,
+          "cells": {
+            "C": "VIII A",
+            "J": "BIO-INF (DT-701)",
+            "K": "IDPS (DT-701)"
+          }
+        },
+        {
+          "row": 33,
+          "cells": {
+            "C": "VIII B",
+            "I": "IDPS (DT-701)",
+            "J": "BIO-INF (DT-701)"
+          }
+        },
+        {
+          "row": 34,
+          "cells": {
+            "B": "WED",
+            "C": "IV A1",
+            "E": "MDM-II",
+            "F": "RECESS",
+            "G": "CD-DT-212",
+            "H": "AI-DT-212"
+          }
+        },
+        {
+          "row": 35,
+          "cells": {
+            "C": "IV A2",
+            "E": "MDM-II",
+            "F": "CIDT-DT-106",
+            "G": "AI-DT-106",
+            "H": "RECESS",
+            "I": "AI-DT-212"
+          }
+        },
+        {
+          "row": 36,
+          "cells": {
+            "C": "IV A3",
+            "E": "MDM-II",
+            "F": "CD-DT-112",
+            "G": "OE-DT-112"
+          }
+        },
+        {
+          "row": 37,
+          "cells": {
+            "C": "IV A4",
+            "E": "MDM-II",
+            "F": "OE-DT-103",
+            "G": "DBMS-DT-103",
+            "H": "RECESS",
+            "I": "AI-DT-103",
+            "J": "CD-DT-103",
+            "K": "CIDT-DT-103"
+          }
+        },
+        {
+          "row": 38,
+          "cells": {
+            "C": "IV A5",
+            "E": "MDM-II",
+            "F": "SL-II- DT-109 (B3 & B4) / DBMS lab-DT-209 (B1 & B2)",
+            "H": "RECESS",
+            "I": "DBMS-DT-106",
+            "J": "CD-DT-106"
+          }
+        },
+        {
+          "row": 39,
+          "cells": {
+            "C": "IV A6",
+            "E": "MDM-II",
+            "F": "DBMS-DT-203",
+            "G": "RECESS",
+            "H": "AI-DT-106"
+          }
+        },
+        {
+          "row": 40,
+          "cells": {
+            "C": "IV A7",
+            "E": "MDM-II",
+            "F": "SL-II Lab- DT-105 (B3 & B4) /DBMS lab-DT-111 (B1 & B2)",
+            "H": "RECESS",
+            "I": "CD-DT-112",
+            "J": "DBMS-DT-112",
+            "K": "AI-DT-112"
+          }
+        },
+        {
+          "row": 41,
+          "cells": {
+            "C": "IV A8",
+            "E": "MDM-II",
+            "F": "SL-II Lab- DT-205 (B3 & B4)// DBMS lab-DT-211 (B1 & B2)",
+            "H": "RECESS",
+            "I": "CD-DT-206",
+            "J": "Mentor/Mentee (Biweekly)",
+            "K": "DBMS-DT-206"
+          }
+        },
+        {
+          "row": 42,
+          "cells": {
+            "C": "IV A9",
+            "E": "MDM-II",
+            "F": "CD-DT-212",
+            "G": "RECESS",
+            "H": "SL-II Lab- DT-205 (B1 & B2) "
+          }
+        },
+        {
+          "row": 43,
+          "cells": {
+            "C": "VI A",
+            "E": "CN LAB (A1,A2) (DN/BD)(DT-811)",
+            "G": "DWM (DT-203)",
+            "H": "RECESS",
+            "I": "CRM (DT-203)",
+            "J": "ML (DT-203)",
+            "K": "CN (DT-203)"
+          }
+        },
+        {
+          "row": 44,
+          "cells": {
+            "C": "VI B",
+            "F": "BDA (DT-206)",
+            "G": "DWM (DT-206)",
+            "H": "CN (DT-206)",
+            "I": "RECESS",
+            "J": "ML (DT-803)",
+            "K": "BDA LAB (B1,B2) (KK) (DT-805)"
+          }
+        },
+        {
+          "row": 45,
+          "cells": {
+            "C": "VI C",
+            "F": "DWM (DT-803)",
+            "G": "ML LAB (C1,C2) (DT-805) (SJ/LR)/CN LAB (C3,C4) (BD/SK) (DT-811)",
+            "I": "RECESS",
+            "J": "DP (DT-212)",
+            "K": "CN (DT-212)"
+          }
+        },
+        {
+          "row": 46,
+          "cells": {
+            "C": "VIII A",
+            "H": "BIO-INF (DT-701)",
+            "I": "IDPS (DT-701)"
+          }
+        },
+        {
+          "row": 47,
+          "cells": {
+            "C": "VIII B",
+            "G": "IDPS (DT-701)",
+            "H": "BIO-INF (DT-701)"
+          }
+        },
+        {
+          "row": 48,
+          "cells": {
+            "B": "THURS",
+            "C": "IV A1",
+            "E": "CIDT-DT-212",
+            "F": "AI-DT-212",
+            "G": "RECESS",
+            "H": "SL-II Lab- DT-105 (B3 & B4)"
+          }
+        },
+        {
+          "row": 49,
+          "cells": {
+            "C": "IV A2",
+            "E": "SL-II Lab- DT-105 (B3 & B4)",
+            "G": "RECESS",
+            "H": "CD-DT-106",
+            "I": "DBMS-DT-106"
+          }
+        },
+        {
+          "row": 50,
+          "cells": {
+            "C": "IV A3",
+            "F": "DBMS Lab- DT-211 (B1 & B2)",
+            "H": "RECESS",
+            "I": "DBMS-DT-103",
+            "J": "CD-DT-103"
+          }
+        },
+        {
+          "row": 51,
+          "cells": {
+            "C": "IV A4",
+            "F": "AI-DT-203",
+            "G": "RECESS",
+            "H": "DBMS Lab- DT-205 (B3 & B4) "
+          }
+        },
+        {
+          "row": 52,
+          "cells": {
+            "C": "IV A5",
+            "G": "CD-DT-212",
+            "H": "RECESS",
+            "I": "DBMS-DT-212",
+            "J": "OE-DT-212"
+          }
+        },
+        {
+          "row": 53,
+          "cells": {
+            "C": "IV A6",
+            "E": "OE-DT-203",
+            "F": "RECESS",
+            "G": "AI-DT-203",
+            "H": "SL-II Lab- DT-109 (B3 & B4)"
+          }
+        },
+        {
+          "row": 54,
+          "cells": {
+            "C": "IV A7",
+            "G": "DBMS-DT-112",
+            "H": "CIDT-DT-112",
+            "I": "RECESS",
+            "J": "AI Lab- DT-105 (B3 & B4) "
+          }
+        },
+        {
+          "row": 55,
+          "cells": {
+            "C": "IV A8",
+            "E": "DBMS-DT-106",
+            "F": "CIDT-DT-106",
+            "G": "CD-DT-106",
+            "H": "RECESS",
+            "I": "AI-DT-206",
+            "J": "AI Lab- DT-109 (B3 & B4)"
+          }
+        },
+        {
+          "row": 56,
+          "cells": {
+            "C": "IV A9",
+            "E": "OE-DT-103",
+            "F": "AI-DT-103",
+            "G": "DBMS-DT-103",
+            "H": "CD-DT-103",
+            "I": "RECESS",
+            "J": "AI Lab- DT-205 (B3 & B4) / DBMS-DT-211 (B1 & B2)"
+          }
+        },
+        {
+          "row": 57,
+          "cells": {
+            "C": "VI A",
+            "F": "BDA LAB (A3,A4) (AS/SS)(DT-805)",
+            "H": "RECESS",
+            "I": "ML (DT-203)",
+            "J": "CN (DT-203)",
+            "K": "DP (DT-203)"
+          }
+        },
+        {
+          "row": 58,
+          "cells": {
+            "C": "VI B",
+            "E": "DT-206 MINOR",
+            "F": "BDA (DT-206)",
+            "G": "CN (DT-206)",
+            "H": "ML (DT-206)",
+            "I": "RECESS"
+          }
+        },
+        {
+          "row": 59,
+          "cells": {
+            "C": "VI C",
+            "E": "DT-112 MINOR OFFERED BY CSE",
+            "G": "ML (DT-803)",
+            "H": "BDA (DT-803)",
+            "I": "RECESS",
+            "J": "CN (DT-803)",
+            "K": "CRM (DT-803)",
+            "L": "DP (DT-803)"
+          }
+        },
+        {
+          "row": 60,
+          "cells": {
+            "C": "VIII A",
+            "J": "IDPS (DT-701)",
+            "K": "Mentor-Mentee Slot\n(Bi- weekly)",
+            "L": "BIO-INF (DT-701)"
+          }
+        },
+        {
+          "row": 61,
+          "cells": {
+            "C": "VIII B",
+            "J": "Mentor-Mentee Slot\n(Bi- weekly)",
+            "K": "IDPS (DT-701)",
+            "L": "BIO-INF (DT-701)"
+          }
+        },
+        {
+          "row": 62,
+          "cells": {
+            "B": "FRI",
+            "C": "IV A1",
+            "E": "CIDT-DT-212",
+            "F": "RECESS",
+            "G": "DBMS-DT-212",
+            "H": "AI Lab- DT-105 (B3 & B4) / DBMS lab-DT-111 (B1 & B2)"
+          }
+        },
+        {
+          "row": 63,
+          "cells": {
+            "C": "IV A2",
+            "E": "DT-206 minor OFFERED BY CSE",
+            "F": " DBMS lab-DT-111 (B1 & B2)",
+            "H": "RECESS",
+            "I": "DBMS-DT-212",
+            "J": "OE-DT-212"
+          }
+        },
+        {
+          "row": 64,
+          "cells": {
+            "C": "IV A3",
+            "E": "SL-II Lab- DT-205 (B3 & B4) ",
+            "G": "Mentor-Mentee ( Bi-Weekly)",
+            "H": "RECESS",
+            "I": "DBMS-DT-103",
+            "J": "AI-DT-103"
+          }
+        },
+        {
+          "row": 65,
+          "cells": {
+            "C": "IV A4",
+            "F": "CD-DT-103",
+            "G": "RECESS",
+            "H": "AI Lab- DT-205 (B3 & B4) / DBMS lab-DT-211 (B1 & B2)",
+            "J": "SL-II Lab- DT-211 (B1 & B2) "
+          }
+        },
+        {
+          "row": 66,
+          "cells": {
+            "C": "IV A5",
+            "E": "DT-111 MINOR",
+            "G": "CD-DT-106",
+            "H": "CIDT-DT-106",
+            "I": "RECESS",
+            "J": "AI-DT-106",
+            "K": "Mentor/Mentee (Bi-Weekly)"
+          }
+        },
+        {
+          "row": 67,
+          "cells": {
+            "C": "IV A6",
+            "E": "CIDT-DT-106",
+            "F": "CD-DT-106",
+            "G": "RECESS",
+            "H": "AI Lab- DT-109 (B3 & B4) / SL-II Lab- DT-209 (B1 & B2) \t",
+            "J": "AI-DT-112"
+          }
+        },
+        {
+          "row": 68,
+          "cells": {
+            "C": "IV A7",
+            "E": "AI-DT-112",
+            "F": "CIDT-DT-112",
+            "G": "DBMS-DT-112",
+            "H": "RECESS",
+            "I": "OE-DT-112",
+            "J": "Mentor/Mentee Bi-Weekly"
+          }
+        },
+        {
+          "row": 69,
+          "cells": {
+            "C": "IV A8",
+            "E": "CD-DT-203",
+            "F": "DBMS-DT-203",
+            "G": "RECESS",
+            "H": "OE-DT-112"
+          }
+        },
+        {
+          "row": 70,
+          "cells": {
+            "C": "IV A9",
+            "E": "DBMS-DT-803",
+            "F": "AI-DT-803",
+            "G": "RECESS",
+            "H": "CIDT-DT-803"
+          }
+        },
+        {
+          "row": 71,
+          "cells": {
+            "C": "VI A",
+            "F": "Mentor-Mentee Slot\n(Bi- weekly)",
+            "G": "BDA (DT-203)",
+            "H": "DP (DT-203)",
+            "I": "CN (DT-203)",
+            "J": "RECESS",
+            "K": "CSE-Honors (DT-106)"
+          }
+        },
+        {
+          "row": 72,
+          "cells": {
+            "C": "VI B",
+            "F": "Mentor-Mentee Slot\n(Bi- weekly)",
+            "G": "CN (DT-206)",
+            "H": "CRM (DT-206)",
+            "I": "DP (DT-206)",
+            "J": "RECESS"
+          }
+        },
+        {
+          "row": 73,
+          "cells": {
+            "C": "VI C",
+            "F": "Mentor-Mentee Slot\n(Bi- weekly)",
+            "G": "ML (DT-803)",
+            "H": "ML LAB (C3,C4) (DT-805) (SJ/LR)/BDA LAB (C1,C2) (AS) (DT-811)",
+            "J": "RECESS"
+          }
+        },
+        {
+          "row": 74,
+          "cells": {
+            "C": "VIII A",
+            "F": "PROJECT (DT-805)"
+          }
+        },
+        {
+          "row": 75,
+          "cells": {
+            "C": "VIII B",
+            "F": "PROJECT (DT-811)"
+          }
+        },
+        {
+          "row": 76,
+          "cells": {
+            "B": "SAT",
+            "C": "IV A1",
+            "E": "CEP -DT-109 (B1, B2, B3, B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)",
+            "K": "Mentor/Mentee-DT-212"
+          }
+        },
+        {
+          "row": 77,
+          "cells": {
+            "C": "IV A2",
+            "E": "CEP -DT-209(B1, B2, B3, B4)\t",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)",
+            "K": "Mentor/Mentee (Bi-Weekly)"
+          }
+        },
+        {
+          "row": 78,
+          "cells": {
+            "C": "IV A3",
+            "E": "CIDT-DT-212",
+            "F": "CEP-DT-212 (B1, B2,B3,B4)",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 79,
+          "cells": {
+            "C": "IV A4",
+            "E": "CEP-DT-103 (B1, B2,B3,B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 80,
+          "cells": {
+            "C": "IV A5",
+            "E": "CEP-DT-105(B1 & B2) , DT-111 (B3 &B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 81,
+          "cells": {
+            "C": "IV A6",
+            "E": "CEP -DT-205(B1 & B2) , DT-211 (B3 & B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 82,
+          "cells": {
+            "C": "IV A7",
+            "E": "CEP -DT-203 (B1 &B2, B3 & B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 83,
+          "cells": {
+            "C": "IV A8",
+            "E": "CEP -DT-106 (B1 &B2 ,B3 & B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 84,
+          "cells": {
+            "C": "IV A9",
+            "E": "CEP -DT-805 (B1 &B2) DT-811( B3 & B4)",
+            "G": "RECESS",
+            "H": "CSE-Honors (DT-103)"
+          }
+        },
+        {
+          "row": 85,
+          "cells": {
+            "C": "VI A",
+            "E": "DT-206 minor OFFERED BY CSE",
+            "F": "CSE-Honors (DT-106)",
+            "H": "RECESS",
+            "I": "MINI PROJECT (DT-805)"
+          }
+        },
+        {
+          "row": 86,
+          "cells": {
+            "C": "VI B",
+            "E": "DT-112 minor OFFERED BY CSE",
+            "F": "CSE-Honors  DT-106",
+            "H": "RECESS",
+            "I": "MINI PROJECT (DT-811)"
+          }
+        },
+        {
+          "row": 87,
+          "cells": {
+            "C": "VI C",
+            "F": "CSE-Honors  DT-106",
+            "H": "RECESS",
+            "I": "MINI PROJECT (DT-205)"
+          }
+        },
+        {
+          "row": 88,
+          "cells": {
+            "C": "VIII A"
+          }
+        },
+        {
+          "row": 89,
+          "cells": {
+            "C": "VIII B"
+          }
+        },
+        {
+          "row": 90,
+          "cells": {
+            "C": "Prof. Neha Lanke/Prof. H. Padwad",
+            "J": "Dr. P. Voditel"
+          }
+        },
+        {
+          "row": 91,
+          "cells": {
+            "C": "Time Table In-Charge, CSE",
+            "J": "HOD, CSE-ET"
+          }
+        },
+        {
+          "row": 94,
+          "cells": {
+            "C": "Semester",
+            "D": "Course Code",
+            "E": "Course Name",
+            "F": "SECTION A",
+            "G": "SECTION B",
+            "H": "SECTION C",
+            "J": "Semester",
+            "K": "Course Code",
+            "L": "Course Name",
+            "M": "Section A",
+            "N": "Section B"
+          }
+        },
+        {
+          "row": 95,
+          "cells": {
+            "C": "VI",
+            "E": "ML",
+            "F": "S.Jain",
+            "G": "R.Hablani",
+            "H": "S. Jain",
+            "J": "VIII",
+            "L": "BIO-INF",
+            "M": "V. Bongirwar",
+            "N": "P. Sonsare"
+          }
+        },
+        {
+          "row": 96,
+          "cells": {
+            "E": "CN",
+            "F": "D.Naidu",
+            "G": "D.Naidu",
+            "H": "S. Khan",
+            "L": "IDPS",
+            "M": "P. Pradhi",
+            "N": "P. Pardhi"
+          }
+        },
+        {
+          "row": 97,
+          "cells": {
+            "E": "DP",
+            "F": "R. Damdoo",
+            "G": "R. Damdoo",
+            "H": "B. Dange"
+          }
+        },
+        {
+          "row": 98,
+          "cells": {
+            "E": "CRM",
+            "F": "S. Jaiswal",
+            "G": "S. Jaiswal",
+            "H": "G. Nazneen"
+          }
+        },
+        {
+          "row": 99,
+          "cells": {
+            "E": "BDA",
+            "F": "A. Saonaerkar",
+            "G": "K. Khurana",
+            "H": "K.Khurana"
+          }
+        },
+        {
+          "row": 100,
+          "cells": {
+            "E": "DWM",
+            "F": "P. Voditel",
+            "G": "K. Shah",
+            "H": "K. Shah"
+          }
+        }
+      ]
+    }
+  }
+}

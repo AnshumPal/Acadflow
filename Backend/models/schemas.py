@@ -1,5 +1,5 @@
 """
-AcadFlow - Data Models and Schema Definitions.
+AcadFlow - Pydantic Request & Response Schemas.
 """
 from typing import List, Optional, Dict
 from pydantic import BaseModel, model_validator
