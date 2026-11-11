@@ -1,19 +1,3 @@
-"""
-AcadFlow - Dynamic Scheduling & Reshuffling Engine (operational engine).
-
-Pure-Python, framework-free module. It is deliberately decoupled from the
-syllabus ledger / audit engine: it only knows about the live timetable
-(sections -> list of ScheduledClass) and never reads syllabus progress.
-
-Conventions (identical to main.py / the frontend):
-  * day    : 0-indexed (0 = Monday ... 5 = Saturday)
-  * period : 1-indexed (1 .. num_periods)
-
-Public API
-  validate_slot_availability(...)  -> SlotCheck        (Task 2.2)
-  find_free_slot(...)              -> Optional[(day, period, room)]
-  domino_swap(...)                 -> DominoResult     (Task 2.1)
-"""
 from __future__ import annotations
 
 import copy
@@ -121,19 +105,7 @@ def validate_slot_availability(
     num_periods: int = 8,
     ignore: Optional[Iterable[Any]] = None,
 ) -> SlotCheck:
-    """
-    Runtime conflict check for placing a class at (day, period).
-
-    Checks, in order:
-      1. bounds
-      2. section clash (section already has a class / recess there)
-      3. faculty clash (any teacher teaching in ANY section at that time)
-      4. room availability with strict type matching (Lab vs Theory)
-
-    `ignore` is a collection of ScheduledClass objects (by identity) treated as
-    absent - used when simulating a move so the class being moved does not
-    block its own destination.
-    """
+    
     ignored = {id(c) for c in (ignore or [])}
     reasons: List[str] = []
 
@@ -252,26 +224,7 @@ def domino_swap(
     course_catalog: Optional[List[Any]] = None,
     tag: str = " (Rescheduled)",
 ) -> DominoResult:
-    """
-    Relocate a class to `target_day` using a two-tier fallback.
-
-    Pre-step  DIRECT        : target slot already free  -> just place it.
-    Tier 1    SAME-DAY SWAP : target slot blocked by one of the section's own
-                              classes (the "blocker") -> relocate the blocker to
-                              another free period on the SAME day, then place.
-    Tier 2    CROSS-DAY SWAP: same-day relocation impossible -> relocate the
-                              blocker to a free slot on any OTHER day, then place.
-
-    Displacement is exactly one level deep: a blocker is moved only into a slot
-    that is free without moving anything else (no cascading chains), so the
-    operation always terminates and is easy to explain in a UI toast.
-
-    If `target_period` is None the engine tries every period of the target day
-    (direct placements first, then Tier 1 / Tier 2 swaps).
-
-    The input `schedule` is NEVER mutated; a modified deep copy is returned in
-    DominoResult.schedule on success.
-    """
+    
     work = copy.deepcopy(schedule)
     # Re-locate `source` inside the copy so identity-based ignore works.
     src_copy = None
@@ -288,6 +241,16 @@ def domino_swap(
     if (source is not None and target_period is not None
             and (source.day, source.period) == (target_day, target_period)):
         return DominoResult(False, None, [], "The class is already in that slot.")
+
+    # Guard: Minimum Daily Hours Hard Constraint (Hours(d, s) >= 3)
+    if source is not None and source.day != target_day:
+        src_day_hours = count_daily_contact_hours(work, section, source.day)
+        if src_day_hours <= 3:
+            return DominoResult(
+                False, None, [],
+                f"Cannot move class: {day_label(source.day)} has only {src_day_hours} contact hours. "
+                f"Removing this class would violate the Minimum Daily Hours Hard Constraint (minimum 3 required)."
+            )
 
     ignore = [src_copy] if src_copy is not None else []
     out_name = base_name(course_name) + tag
@@ -388,4 +351,164 @@ def domino_swap(
         f"No conflict-free arrangement found for {where}: the slot is blocked and the "
         f"blocking class could not be relocated (tried same-day and cross-day swaps).",
     )
+
+
+# --------------------------------------------------------------------------- #
+# Minimum Daily Hours Hard Constraint & Redistribution Protocol
+# --------------------------------------------------------------------------- #
+def count_daily_contact_hours(
+    schedule: Dict[str, List[Any]],
+    section: str,
+    day: int,
+) -> int:
+    classes = schedule.get(section, [])
+    active_periods = {
+        c.period for c in classes
+        if c.day == day and not getattr(c, "is_recess", False)
+    }
+    return len(active_periods)
+
+
+def validate_minimum_daily_hours(
+    schedule: Dict[str, List[Any]],
+    *,
+    min_hours: int = 3,
+    num_days: int = 6,
+) -> Tuple[bool, List[str], Dict[str, Dict[str, int]]]:
+    violations = []
+    hours_matrix = {}
+    is_valid = True
+
+    for sec in sorted(schedule.keys()):
+        hours_matrix[sec] = {}
+        for d in range(num_days):
+            d_name = day_label(d)
+            hrs = count_daily_contact_hours(schedule, sec, d)
+            hours_matrix[sec][d_name] = hrs
+            if hrs < min_hours:
+                is_valid = False
+                violations.append(
+                    f"Minimum Daily Hours Hard Constraint Violation: Section {sec} has only {hrs} "
+                    f"contact hours on {d_name} (minimum {min_hours} required)."
+                )
+
+    return is_valid, violations, hours_matrix
+
+
+def evaluate_schedule_fitness(
+    schedule: Dict[str, List[Any]],
+    *,
+    min_hours: int = 3,
+    num_days: int = 6,
+) -> float:
+    base_score = 1000.0
+    penalty = 0.0
+
+    for sec in schedule.keys():
+        for d in range(num_days):
+            hrs = count_daily_contact_hours(schedule, sec, d)
+            if hrs < min_hours:
+                deficit = min_hours - hrs
+                # Severe penalty ensuring deficit candidates are strictly rejected
+                penalty += 10000.0 * (deficit ** 2)
+
+    return max(-1e9, base_score - penalty)
+
+
+def redistribute_to_meet_minimum_hours(
+    schedule: Dict[str, List[Any]],
+    *,
+    all_rooms: Optional[List[str]] = None,
+    min_hours: int = 3,
+    num_days: int = 6,
+    num_periods: int = 8,
+    course_catalog: Optional[List[Any]] = None,
+    ScheduledClass: Optional[Any] = None,
+) -> Tuple[Dict[str, List[Any]], List[str]]:
+    
+    work = copy.deepcopy(schedule)
+    redistribution_log: List[str] = []
+
+    if all_rooms is None:
+        all_rooms = [
+            "DT-403", "DT-406", "DT-612",
+            "DT-405 (Lab)", "DT-409 (Lab)", "DT-509 (Lab)", "DT-609 (Lab)"
+        ]
+
+    # If ScheduledClass factory is not provided, infer from existing objects
+    if ScheduledClass is None:
+        first_sec = next(iter(work.values()), [])
+        if first_sec:
+            ScheduledClass = type(first_sec[0])
+        else:
+            try:
+                from .models import ScheduledClass as SC
+                ScheduledClass = SC
+            except (ImportError, ValueError):
+                from models import ScheduledClass as SC
+                ScheduledClass = SC
+
+    for sec in sorted(work.keys()):
+        max_iterations = 20
+        iteration = 0
+
+        while iteration < max_iterations:
+            iteration += 1
+            daily_hours = {d: count_daily_contact_hours(work, sec, d) for d in range(num_days)}
+            deficit_days = [d for d in range(num_days) if daily_hours[d] < min_hours]
+            if not deficit_days:
+                break
+
+            deficit_days.sort(key=lambda d: daily_hours[d])
+            target_d = deficit_days[0]
+
+            donor_days = [d for d in range(num_days) if daily_hours[d] > min_hours]
+            if not donor_days:
+                break
+
+            donor_days.sort(key=lambda d: daily_hours[d], reverse=True)
+            moved = False
+
+            for donor_d in donor_days:
+                donor_classes = [
+                    c for c in work.get(sec, [])
+                    if c.day == donor_d and not getattr(c, "is_recess", False)
+                ]
+                donor_classes.sort(key=lambda c: 1 if _class_is_lab(c, course_catalog, sec) else 0)
+
+                for candidate in donor_classes:
+                    candidate_is_lab = _class_is_lab(candidate, course_catalog, sec)
+                    for p in range(1, num_periods + 1):
+                        chk = validate_slot_availability(
+                            work, sec, candidate.teachers, candidate_is_lab,
+                            target_d, p, all_rooms,
+                            num_days=num_days, num_periods=num_periods,
+                            ignore=[candidate],
+                        )
+                        if chk.available:
+                            dest_room = chk.free_rooms[0]
+                            _remove(work, sec, candidate)
+                            c_name = base_name(candidate.course_name)
+                            _place(
+                                work, sec, c_name, candidate.teachers,
+                                target_d, p, dest_room, ScheduledClass
+                            )
+                            msg = (
+                                f"Redistributed '{c_name}' in Section {sec} from {day_label(donor_d)} P{candidate.period} "
+                                f"({daily_hours[donor_d]} hrs) to {day_label(target_d)} P{p} "
+                                f"to satisfy the >= {min_hours} daily hours hard constraint."
+                            )
+                            redistribution_log.append(msg)
+                            moved = True
+                            break
+                    if moved:
+                        break
+                if moved:
+                    break
+
+            if not moved:
+                break
+
+    return work, redistribution_log
+
 

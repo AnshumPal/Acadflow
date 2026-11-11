@@ -106,6 +106,9 @@ class TimetableResponse(BaseModel):
     message: str
     # Populated by /reschedule-dynamic only; absent (null) for other endpoints.
     reschedule: Optional[RescheduleMetadata] = None
+    # Populated by /generate and /reschedule-dynamic after min-hours audit.
+    # Shape: { "V A": { "Monday": 4, "Tuesday": 3, ... }, ... }
+    min_hours_audit: Optional[Dict[str, Dict[str, int]]] = None
 
 
 class RescheduleRequest(BaseModel):
@@ -151,4 +154,11 @@ class ExtraClassRequest(BaseModel):
     target_day: Optional[int] = None  # Optional: If provided, only searches this day. If null, searches the whole week.
     num_days: int = 6
     num_periods: int = 8
+
+
+class TimetableIngestRequest(BaseModel):
+    csv_content: str
+    auto_self_correct: bool = True
+    export_excel: bool = False
+
 

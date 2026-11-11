@@ -20,10 +20,12 @@ try:
         RescheduleRequest,
         ExportRequest,
         ExtraClassRequest,
+        TimetableIngestRequest,
         periods_from_credits,
     )
     from .solver import generate_schedule
     from .exporter import build_excel_timetable
+    from .timetable_parser import TimetableParser
     from . import scheduling_engine as engine
     from .syllabus import router as syllabus_router, find_extra_class_slot
 except (ImportError, ValueError):
@@ -37,10 +39,12 @@ except (ImportError, ValueError):
         RescheduleRequest,
         ExportRequest,
         ExtraClassRequest,
+        TimetableIngestRequest,
         periods_from_credits,
     )
     from solver import generate_schedule
     from exporter import build_excel_timetable
+    from timetable_parser import TimetableParser
     import scheduling_engine as engine
     from syllabus import router as syllabus_router, find_extra_class_slot
 
@@ -80,16 +84,60 @@ def root():
     }
 
 
+MIN_CONTACT_HOURS = 3  # Hard constraint: Hours(d, s) >= 3 for every section and day
+
+
 @app.post("/api/v1/generate", response_model=TimetableResponse)
 async def create_timetable(request: TimetableRequest):
     """
     Generate an optimal academic timetable using CP-SAT constraint satisfaction.
-    Executed in a background worker threadpool to keep the server event loop responsive.
+
+    Post-generation, the minimum daily hours hard constraint is audited:
+      Hours(d, s) >= 3  ∀d ∈ {Mon..Sat}, ∀s ∈ Sections
+    If violations are detected, the Redistribution Protocol automatically
+    pulls classes from the heaviest day to satisfy the threshold before returning.
+    The `min_hours_audit` field in the response contains the per-section,
+    per-day contact-hour matrix after any redistribution.
     """
     try:
         result = await run_in_threadpool(generate_schedule, request)
         if result["status"] == "failed":
             raise HTTPException(status_code=400, detail=result["message"])
+
+        schedule = result.get("schedule") or {}
+        num_days = request.num_days
+
+        # --- Minimum Daily Hours Audit & Redistribution ---
+        is_valid, violations, hours_matrix = engine.validate_minimum_daily_hours(
+            schedule, min_hours=MIN_CONTACT_HOURS, num_days=num_days
+        )
+        redistribution_logs: list = []
+
+        if not is_valid:
+            logger.warning(
+                "Generated schedule has %d minimum-daily-hours violation(s). "
+                "Running Redistribution Protocol...",
+                len(violations),
+            )
+            schedule, redistribution_logs = engine.redistribute_to_meet_minimum_hours(
+                schedule,
+                all_rooms=request.rooms,
+                min_hours=MIN_CONTACT_HOURS,
+                num_days=num_days,
+                num_periods=request.num_periods,
+                course_catalog=request.courses,
+                ScheduledClass=ScheduledClass,
+            )
+            # Re-audit after redistribution
+            _, post_violations, hours_matrix = engine.validate_minimum_daily_hours(
+                schedule, min_hours=MIN_CONTACT_HOURS, num_days=num_days
+            )
+            result["schedule"] = schedule
+            if redistribution_logs:
+                suffix = f" Redistributed {len(redistribution_logs)} class(es) to meet >= {MIN_CONTACT_HOURS}h/day."
+                result["message"] = result.get("message", "") + suffix
+
+        result["min_hours_audit"] = hours_matrix
         return result
     except HTTPException:
         raise
@@ -108,6 +156,12 @@ async def dynamic_reschedule(request: RescheduleRequest):
       - Direct placement if free
       - Tier 1: same-day single displacement swap
       - Tier 2: cross-day single displacement swap
+
+    Post-swap, the minimum daily hours hard constraint is validated:
+      Hours(d, s) >= 3  ∀d ∈ {Mon..Sat}, ∀s ∈ Sections
+    Returns 400 if the resulting schedule violates the hard constraint after all
+    redistribution attempts fail. The `min_hours_audit` field always reflects the
+    post-swap contact-hour matrix.
     Returns displacement metadata for UI notifications and toast updates.
     """
     try:
@@ -148,16 +202,48 @@ async def dynamic_reschedule(request: RescheduleRequest):
         if not result.success:
             raise HTTPException(status_code=400, detail=result.message)
 
+        post_schedule = result.schedule
+
+        # --- Post-swap Minimum Daily Hours Validation ---
+        is_valid, violations, hours_matrix = engine.validate_minimum_daily_hours(
+            post_schedule, min_hours=MIN_CONTACT_HOURS, num_days=request.num_days
+        )
+        if not is_valid:
+            # Domino swap guard should have already blocked moves that drop below threshold,
+            # but run a final safety redistribution for multi-section edge cases.
+            post_schedule, _ = engine.redistribute_to_meet_minimum_hours(
+                post_schedule,
+                all_rooms=request.all_rooms,
+                min_hours=MIN_CONTACT_HOURS,
+                num_days=request.num_days,
+                num_periods=request.num_periods,
+                course_catalog=request.all_courses,
+                ScheduledClass=ScheduledClass,
+            )
+            _, post_violations, hours_matrix = engine.validate_minimum_daily_hours(
+                post_schedule, min_hours=MIN_CONTACT_HOURS, num_days=request.num_days
+            )
+            if post_violations:
+                raise HTTPException(
+                    status_code=400,
+                    detail=(
+                        f"Reschedule would violate the minimum daily hours constraint "
+                        f"({MIN_CONTACT_HOURS}h/day). Violations: " +
+                        "; ".join(post_violations[:3])
+                    ),
+                )
+
         moves = [m.to_dict() for m in result.moves]
         return {
             "status": "success",
-            "schedule": result.schedule,
+            "schedule": post_schedule,
             "message": result.message,
             "reschedule": {
                 "tier": result.tier,
                 "displaced_count": sum(1 for m in moves if m["role"] == "displaced"),
                 "moves": moves,
             },
+            "min_hours_audit": hours_matrix,
         }
     except HTTPException:
         raise
@@ -246,3 +332,48 @@ async def export_schedule_to_excel(request: ExportRequest):
     except Exception as e:
         logger.exception("Error generating Excel export")
         raise HTTPException(status_code=500, detail=f"Failed to generate Excel: {str(e)}")
+
+
+@app.post("/api/v1/timetable/ingest")
+def ingest_and_validate_timetable(request: TimetableIngestRequest):
+    """
+    Ingest, parse, self-correct, and validate university timetable dumps (CSV format).
+    Automatically detects missing operational days/periods (e.g. Thursday in V C),
+    cross-references Master=TT, verifies room constraints (Lab in '(Lab)', Theory in lecture halls),
+    and validates faculty/room conflict-free schedules.
+    """
+    try:
+        parser = TimetableParser()
+        result = parser.process_and_generate(request.csv_content)
+        return result
+    except Exception as e:
+        logger.exception("Error ingesting timetable")
+        raise HTTPException(status_code=400, detail=f"Failed to ingest timetable: {str(e)}")
+
+
+@app.post("/api/v1/timetable/ingest/excel")
+def ingest_timetable_and_stream_excel(request: TimetableIngestRequest):
+    """
+    Ingest raw timetable dump, perform automated self-correction and validation,
+    and directly stream the professionally formatted Excel (.xlsx) file.
+    """
+    try:
+        parser = TimetableParser()
+        raw_schedule = parser.ingest_csv(request.csv_content)
+        if request.auto_self_correct:
+            schedule, _ = parser.self_correct_schedule(raw_schedule)
+        else:
+            schedule = raw_schedule
+
+        export_req = ExportRequest(schedule=schedule, num_days=6, num_periods=8)
+        output = build_excel_timetable(export_req)
+        headers = {"Content-Disposition": 'attachment; filename="AcadFlow_Timetable_Validated.xlsx"'}
+        return StreamingResponse(
+            output,
+            headers=headers,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        )
+    except Exception as e:
+        logger.exception("Error generating Excel from ingested timetable")
+        raise HTTPException(status_code=500, detail=f"Failed to generate Excel: {str(e)}")
+

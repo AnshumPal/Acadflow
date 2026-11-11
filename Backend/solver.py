@@ -243,6 +243,20 @@ def generate_schedule(data: TimetableRequest) -> dict:
                 active_periods_today.append(period_active)
             model.Add(sum(active_periods_today) <= max_classes)
 
+            # System Directive — Minimum Daily Hours Hard Constraint:
+            # Hours(d, s) >= 3  ∀d ∈ Operational Days, ∀s ∈ Sections
+            # Zero-Hour / Gap Elimination: Never produce or accept a schedule candidate
+            # where any section has 0, 1, or 2 total contact hours on any operational day.
+            min_contact_hours = 3
+            if total_student_hours >= min_contact_hours * data.num_days:
+                # Section has sufficient load: enforce >= 3 contact hours on every operational day
+                model.Add(sum(active_periods_today) >= min_contact_hours)
+                model.Add(sec_active_day[(section, d)] == 1)
+            else:
+                # Partial load: ensure active days are not fragmented into 1 or 2 hours
+                min_for_active = min(min_contact_hours, total_student_hours)
+                model.Add(sum(active_periods_today) >= min_for_active).OnlyEnforceIf(sec_active_day[(section, d)])
+
     # I. CONTIGUOUS SCHEDULING
     for section in data.sections:
         c_indices = [i for i, c in enumerate(data.courses) if c.section == section]
